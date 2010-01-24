@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+umask 0002
+
+typeset -U path
+path=(~/bin ~/local/bin $path)
+
+export EDITOR=vim

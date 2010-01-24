@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+setopt prompt_subst
+PROMPT_1='%n@%{$host_color%}%m%{${fg_no_bold[default]}%}:%$(($COLUMNS - 40))<...<%~%<<%{$fg_bold[yellow]%}$(git_prompt)%{$reset_color%}%(?.%{${fg_bold[green]}%}.%{${fg_bold[red]}%})%#%{${fg_no_bold[default]}%} '
+PROMPT_2='%{$host_color%}%m%{${fg_no_bold[default]}%}:%$(($COLUMNS - 60))<...<%~%<<%(?.%{${fg_bold[green]}%}.%{${fg_bold[red]}%})%#%{${fg_no_bold[default]}%} '
+PROMPT_3='%$(($COLUMNS - 10))<...<%~%<<%(?.%{${fg_bold[green]}%}.%{${fg_bold[red]}%})%#%{${fg_no_bold[default]}%} '
+PROMPT_4='%(?.%{${fg_bold[green]}%}.%{${fg_bold[red]}%})%#%{${fg_no_bold[default]}%} '
+
+# RPROMPT='%*'
+
+PROMPT=$PROMPT_1
+
+# make sure we're in an xterm!
+case $TERM in (xterm*|rxvt)
+    precmd () { print -Pn "\e]0;%n@%m: %~\a" }
+    preexec () { print -Pn "\e]0;%n@%m: $1\a" }
+    ;;
+esac

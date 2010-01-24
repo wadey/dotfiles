@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+host_color=${fg_bold[cyan]}

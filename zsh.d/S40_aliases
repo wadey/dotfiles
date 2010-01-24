@@ -1,0 +1,65 @@
+#!/bin/zsh
+
+# global
+DOTS="..."
+for ((NUM=2; NUM<=10; NUM+=1)); do
+#    alias -g "..$NUM"=`..n $NUM`
+    alias -g $DOTS=`..n $NUM`
+    DOTS="$DOTS."
+done
+
+#alias -g '...'='..1'
+#alias -g '....'='..2'
+#alias -g '.....'='..3'
+
+# ls
+if [ $(uname) = 'Darwin' ]; then
+  if /usr/bin/which -s gls; then
+    alias ls='gls -F --color'
+  else
+    echo_warn "On Darwin and 'gls' not found"
+  fi
+else
+  alias ls='ls -F --color=auto'
+fi
+
+alias ll='ls -l'
+alias la='ls -a'
+
+# List only directories and symbolic
+# links that point to directories
+alias lsd='ls -d *(-/DN)'
+alias lld='ls -ld *(-/DN)'
+
+# List only file beginning with "."
+alias lsa='ls -d .*'
+alias lla='ls -ld .*'
+
+alias lsr='ls -d **/*(.)'
+alias llr='ls -ld **/*(.)'
+
+alias lsdr='ls -d **/*(/)'
+alias lldr='ls -ld **/*(/)'
+
+# Standard stuff
+alias mv='nocorrect mv'       # no spelling correction on mv
+alias cp='nocorrect cp'       # no spelling correction on cp
+alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
+
+alias j=jobs
+alias pu=pushd
+alias po=popd
+alias d='dirs -v'
+alias h=history
+
+# application overrides
+# alias grep=egrep
+alias vi=vim
+
+alias sudovim=sudo\ vim
+alias sudovi=sudovim
+alias suvi=sudovim
+
+autoload zmv
+# Easy "mass move" alias
+alias mmv='noglob zmv -W'
