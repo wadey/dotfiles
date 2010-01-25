@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SH_FILES="zshrc zsh.d gitconfig"
+SH_FILES="zshrc zsh.d gitconfig vimrc"
 BACKUP="backups/`date +'%Y%m%d-%H%M%S'`"
 SHDIR=$PWD
 
