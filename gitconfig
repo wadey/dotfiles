@@ -1,0 +1,25 @@
+[user]
+  name = 
+  email = 
+[github]
+  user = 
+  token = 
+[color]
+  ui = true
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+  cp = cherry-pick
+  logs = log --stat
+  #spull = !git svn fetch && git svn rebase -l
+  srebase = !git stash && git svn rebase -l && git stash pop
+  kfetch = !klist >&- 2>&- || kinit -R || kinit wades && git svn fetch 
+  sdcommit = !git stash && git svn dcommit && git stash pop
+  up = pull --rebase
+  override = !sh -c 'echo git add -- $0 && echo git reset HEAD -q -- $0 && echo git checkout -- $0'
+  wu = log --stat origin..@{0}
+  unadd = rm --cached
+[mergetool "mvimdiff"]
+  cmd = mvimdiff \"$LOCAL\" \"$REMOTE\" \"$MERGED\" \"$BASE\"
