@@ -1,11 +1,11 @@
 #!/bin/sh
 
 SH_FILES="zshrc zsh.d"
-BACKUP=shbackup`date +'%Y%m%d-%H%M%S'`
+BACKUP="backups/`date +'%Y%m%d-%H%M%S'`"
 SHDIR=$PWD
 
 if [ ! -d $BACKUP ]; then
-    mkdir $BACKUP
+    mkdir -p $BACKUP
 fi
 
 for FILE in $SH_FILES; do
