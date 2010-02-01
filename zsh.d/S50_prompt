@@ -12,7 +12,10 @@ PROMPT=$PROMPT_1
 
 # make sure we're in an xterm!
 case $TERM in (xterm*|rxvt)
-    precmd () { print -Pn "\e]0;%n@%m: %~\a" }
-    preexec () { print -Pn "\e]0;%n@%m: $1\a" }
+    prompt_precmd () { print -Pn "\e]0;%n@%m: %~\a" }
+	precmd_functions+=prompt_precmd
+
+    prompt_preexec () { print -Pn "\e]0;%n@%m: $1\a" }
+	preexec_functions+=prompt_preexec
     ;;
 esac
