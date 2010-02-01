@@ -15,7 +15,6 @@
   logs = log --stat
   #spull = !git svn fetch && git svn rebase -l
   srebase = !git stash && git svn rebase -l && git stash pop
-  kfetch = !klist >&- 2>&- || kinit -R || kinit wades && git svn fetch 
   sdcommit = !git stash && git svn dcommit && git stash pop
   up = pull --rebase
   override = !sh -c 'echo git add -- $0 && echo git reset HEAD -q -- $0 && echo git checkout -- $0'
