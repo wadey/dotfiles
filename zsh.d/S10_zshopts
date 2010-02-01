@@ -5,12 +5,8 @@ if /usr/bin/which -s gdircolors; then
 elif /usr/bin/which -s dircolors; then
   eval `dircolors -b`
 else
-  echo " [WARN] No dircolors command found"
+  echo_warn "No dircolors command found"
 fi
-
-echo_warn() {
-  echo " [WARN] $1"
-}
 
 watch=(notme)
 WATCHFMT='%n %a at %t %w from %M'
