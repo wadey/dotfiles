@@ -3,7 +3,7 @@
 umask 0002
 
 typeset -U path
-path=(~/bin ~/local/bin $path)
+path=(~/bin ~/local/bin /usr/local/bin $path)
 
 export EDITOR=vim
 
