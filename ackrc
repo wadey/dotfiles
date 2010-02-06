@@ -1,0 +1,7 @@
+# from http://al3x.net/2008/12/03/how-i-use-textmate.html
+--sort-files
+--color
+--context=1
+--follow
+--group
+--all
