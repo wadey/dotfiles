@@ -12,13 +12,22 @@
   co = checkout
   br = branch
   cp = cherry-pick
-  logs = log --stat
+  up = pull --rebase
+  lg = log --decorate
+  logs = log --stat --decorate
+  logg = log --graph --decorate
   #spull = !git svn fetch && git svn rebase -l
   srebase = !git stash && git svn rebase -l && git stash pop
   sdcommit = !git stash && git svn dcommit && git stash pop
-  up = pull --rebase
   override = !sh -c 'echo git add -- $0 && echo git reset HEAD -q -- $0 && echo git checkout -- $0'
   wu = log --stat origin..@{0}
   unadd = rm --cached
 [mergetool "mvimdiff"]
   cmd = mvimdiff \"$LOCAL\" \"$REMOTE\" \"$MERGED\" \"$BASE\"
+[mergetool "p4merge"]
+  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  trustExitCode = false
+[mergetool]
+  keepBackup = false
+[merge]
+  tool = p4merge
