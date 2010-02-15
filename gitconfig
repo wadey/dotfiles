@@ -13,9 +13,9 @@
   br = branch
   cp = cherry-pick
   up = pull --rebase
-  lg = log --decorate
+  lg = log --branches --remotes --decorate
   logs = log --stat --decorate
-  logg = log --graph --decorate
+  logg = log --graph --decorate --branches --remotes
   #spull = !git svn fetch && git svn rebase -l
   srebase = !git stash && git svn rebase -l && git stash pop
   sdcommit = !git stash && git svn dcommit && git stash pop
@@ -31,3 +31,5 @@
   keepBackup = false
 [merge]
   tool = p4merge
+[push]
+  default = current
