@@ -4,6 +4,8 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 
+GIT_BRANCHSTATUS_SEP=""
+
 git_prompt() {
   __git_ps1 "[%s]" | sed 's/%/%%/g'
 }
@@ -115,6 +117,6 @@ __git_ps1 ()
 		fi
 
 		local f="$w$i$s$u"
-		printf "${1:- (%s)}" "$c${b##refs/heads/}${f:+ $f}$r"
+		printf "${1:- (%s)}" "$c${b##refs/heads/}${f:+$GIT_BRANCHSTATUS_SEP$f}$r"
 	fi
 }
