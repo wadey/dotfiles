@@ -13,7 +13,8 @@
   br = branch
   cp = cherry-pick
   up = pull --rebase
-  lg = log --branches --remotes --decorate
+  ff = pull --ff-only
+  lg = log --decorate
   logs = log --stat --decorate
   logg = log --graph --decorate --branches --remotes
   #spull = !git svn fetch && git svn rebase -l
