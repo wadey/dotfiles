@@ -17,12 +17,16 @@
   lg = log --decorate
   logs = log --stat --decorate
   logg = log --graph --decorate --branches --remotes
-  #spull = !git svn fetch && git svn rebase -l
-  srebase = !git stash && git svn rebase -l && git stash pop
-  sdcommit = !git stash && git svn dcommit && git stash pop
+  pop = stash pop
   override = !sh -c 'echo git add -- $0 && echo git reset HEAD -q -- $0 && echo git checkout -- $0'
   wu = log --stat origin..@{0}
   unadd = rm --cached
+  sup = !git stash && git up && git pop
+
+  # git svn aliases
+  #spull = !git svn fetch && git svn rebase -l
+  srebase = !git stash && git svn rebase -l && git stash pop
+  sdcommit = !git stash && git svn dcommit && git stash pop
 [mergetool "mvimdiff"]
   cmd = mvimdiff \"$LOCAL\" \"$REMOTE\" \"$MERGED\" \"$BASE\"
 [mergetool "p4merge"]
