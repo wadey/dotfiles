@@ -1,0 +1,14 @@
+shell -/bin/zsh           # Use zsh 
+startup_message off       # No startup mesage
+msgwait 1                 # Show messages for only one second
+escape `z                 # Use ` for escape instead of CTRL+A
+defscrollback 30000       # Use a 30000-line scrollback buffer
+bindkey -k kP copy        # bind shift+page-up/down to screen page up/down
+bindkey ^[[5C next        # bind ctrl-<right> to next shell
+bindkey ^[[5D prev        # bind ctrl-<left> to prev shell 
+ignorecase on             # Ignore case in incremental search
+vbell off                 # no visual bell
+
+# Display status line: All windows, with the active window highlighted. Time and date right aligned.
+# hardstatus alwayslastline "%{= kR} %-Lw%{=b Kk} %n%f %t %{-}%+Lw %=%{= kR}%C%A  %D, %M/%d/%Y %{= dd}"
+hardstatus alwayslastline "%-Lw%{=b bw} %n%f %t %{-}%+Lw %=%C%A  %D, %M/%d/%Y %{= dd}"

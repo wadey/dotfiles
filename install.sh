@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SH_FILES="zshrc zsh.d gitconfig vimrc ackrc"
+SH_FILES="zshrc zsh.d gitconfig vimrc ackrc screenrc"
 BACKUP="backups/`date +'%Y%m%d-%H%M%S'`"
 SHDIR=$PWD
 
