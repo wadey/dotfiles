@@ -22,6 +22,7 @@
   wu = log --stat origin..@{0}
   unadd = rm --cached
   sup = !git stash && git up && git pop
+  sff = !git stash && git ff && git pop
 
   # git svn aliases
   #spull = !git svn fetch && git svn rebase -l
@@ -38,3 +39,5 @@
   tool = p4merge
 [push]
   default = current
+[core]
+	excludesfile = /Users/wade/.gitignore
