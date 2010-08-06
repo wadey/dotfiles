@@ -111,6 +111,9 @@ function! Smart_TabComplete()
 endfunction
 :inoremap <Tab> <C-R>=Smart_TabComplete()<CR>
 
+" The <CR> key should select from completion menu without adding a newline
+imap <expr> <CR> pumvisible() ? "<C-Y>" : "<CR>"
+
 if has("autocmd")
     autocmd FileType tex setlocal makeprg=latex\ %
     autocmd FileType tex map <F12>   :wa!<CR>:make<CR><CR>
@@ -119,6 +122,17 @@ if has("autocmd")
 endif
 
 set verbose=0
+
+set wildmode=list:longest
+
+set listchars=tab:>-,trail:·,eol:$
+nmap <silent> <leader>s :set nolist!<CR>
+nmap <silent> <leader>n :silent :nohlsearch<CR>
+nmap . .`[
+
+" GIT
+" set laststatus=2
+" set statusline=%<%f[%{GitBranch()}]\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 au BufRead,BufNewFile *.thrift set filetype=thrift
 au! Syntax thrift source ~/.vim/thrift.vim
