@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SH_FILES="zshrc zsh.d gitconfig gitignore vimrc ackrc screenrc"
+SH_FILES="zshrc zsh.d gitconfig gitignore vimrc ackrc screenrc ctags"
 BACKUP="backups/`date +'%Y%m%d-%H%M%S'`"
 SHDIR=$PWD
 
