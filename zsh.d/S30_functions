@@ -28,6 +28,10 @@ decrypt() {
     echo "$@" | base64 -d | gpg -d
 }
 
+gits () {
+    git stash && git $* && git stash pop
+}
+
 _git_list_branches () {
   for B in `git branch | sed -E 's/[\* ]+(.*)/\1/'`; do
     echo $B
