@@ -57,6 +57,12 @@ alias h=history
 # alias grep=egrep
 alias vi=vim
 
+if [ $(uname) = 'Darwin' ]; then
+  if /usr/bin/which -s mvim; then
+    alias vim='mvim -v'
+  fi
+fi
+
 alias sudovim=sudo\ vim
 alias sudovi=sudovim
 alias suvi=sudovim
