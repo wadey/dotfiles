@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-if /usr/bin/which -s gdircolors; then
+if /usr/bin/which gdircolors >-; then
   eval `gdircolors -b`
-elif /usr/bin/which -s dircolors; then
+elif /usr/bin/which dircolors >-; then
   eval `dircolors -b`
 else
   echo_warn "No dircolors command found"
