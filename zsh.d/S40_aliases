@@ -14,7 +14,7 @@ done
 
 # ls
 if [ $(uname) = 'Darwin' ]; then
-  if /usr/bin/which gls >-; then
+  if /usr/bin/which gls >&-; then
     alias ls='gls -F --color'
   else
     echo_warn "On Darwin and 'gls' not found"
@@ -58,7 +58,7 @@ alias h=history
 alias vi=vim
 
 if [ $(uname) = 'Darwin' ]; then
-  if /usr/bin/which mvim >-; then
+  if /usr/bin/which mvim >&-; then
     alias vim='mvim -v'
   fi
 fi
