@@ -14,3 +14,7 @@ fi
 if [ -n DISPLAY ]; then
   export DISPLAY=:0.0
 fi
+
+__which() {
+    /usr/bin/which $1 >/dev/null
+}
