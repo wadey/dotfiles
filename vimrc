@@ -33,6 +33,9 @@ set hlsearch                "highlight search items"
 set modeline                "read modeline from files"
 set modelines=5             "look for modelines in first 5 lines"
 
+set copyindent              "copy the previous indentation on autoindenting
+set hidden                  "hide buffers instead of closing them
+
 "" wrapping stuff
 set display+=lastline       "display the last line, even if it doesnt fit
 set showbreak=+             "display '-> ' before wrapped lines
@@ -119,16 +122,24 @@ if has("autocmd")
     autocmd FileType tex map <F12>   :wa!<CR>:make<CR><CR>
     "autocmd Filetype c   map <F12>   :wa!<CR>:make<CR>
     "autocmd Filetype cpp map <F12>   :wa!<CR>:make<CR>
+    autocmd filetype javascript set tabstop=2
+    autocmd filetype javascript set softtabstop=2
+    autocmd filetype javascript set shiftwidth=2
 endif
 
 set verbose=0
 
 set wildmode=list:longest
 
-set listchars=tab:>-,trail:·,eol:$
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+"set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 nmap <silent> <leader>n :silent :nohlsearch<CR>
 nmap . .`[
+
+cmap w!! w !sudo tee % >/dev/null
 
 " GIT
 " set laststatus=2
