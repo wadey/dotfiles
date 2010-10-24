@@ -1,35 +1,43 @@
 set nocompatible            "enable new vim-only features
 
-if version >= 700 
-    setlocal nospell spelllang=en_us
-
-    if has("autocmd") && exists("+omnifunc")
-        autocmd Filetype *
-                    \   if &omnifunc == "" |
-                    \           setlocal omnifunc=syntaxcomplete#Complete |
-                    \   endif
-    endif
-endif
+" Needed on some linux distros.
+" see
+" http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
+filetype off 
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
 
 syntax enable               "syntax highlighting
-filetype plugin indent on    "filetype specific plugins
 
 set bg=dark                 "for dark background consoles
+
 set tabstop=4               "tab = 4 spaces
 set softtabstop=4           "tab = 4 spaces
 set shiftwidth=4            "tab = 4 spaces
-set backspace=2             "allow 'normal' backspacing
 set expandtab               "turn tabs in spaces
 set smarttab                "be smart about deleting tab space, etc
-set showmatch               "display matching parentheses
-set noignorecase            "don't ignore case in searches
-set incsearch               "highlight search matches as you type them
-set autoindent              "indent to the level of the previous line
+
+set backspace=2             "allow 'normal' backspacing
 set ruler                   "display current position in status line
+set autoindent              "indent to the level of the previous line
+set laststatus=2
+set relativenumber
+set undofile
+
+set showmatch               "display matching parentheses
 set showmode                "display the active mode in status line
 set showcmd                 "display key commands in status line
-"set cindent                "Automatically indent according to 'C' rules
+"set showbreak=+             "display '-> ' before wrapped lines
+
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase              "ignore case in searches
+set smartcase
+set gdefault
+set incsearch               "highlight search matches as you type them
 set hlsearch                "highlight search items"
+
 set modeline                "read modeline from files"
 set modelines=5             "look for modelines in first 5 lines"
 
@@ -37,9 +45,20 @@ set copyindent              "copy the previous indentation on autoindenting
 set hidden                  "hide buffers instead of closing them
 
 "" wrapping stuff
+set wrap
 set display+=lastline       "display the last line, even if it doesnt fit
-set showbreak=+             "display '-> ' before wrapped lines
 set textwidth=0             "When wrapping is off, break lines at 78 chars
+set formatoptions=qrn1
+set colorcolumn=80,81,82
+hi ColorColumn ctermbg=black guibg=grey10
+
+set wildmenu
+set wildmode=list:longest
+set wildignore+=*.o,*.obj,.git
+
+"set list
+"set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:▸\ ,eol:¬
 
 "" TOhtml stuff
 let html_use_css=1          "use css in HTML output
@@ -77,6 +96,9 @@ map ;on-m       :set textwidth=78\|map ;L ;off-m<CR>
 " Change <tab>s to spaces
 map ;T :retab<CR>
 
+nnoremap j gj
+nnoremap k gk
+
 "" GNU readline bindings
 map <C-A>   <Home>
 map <C-E>   <End>
@@ -86,7 +108,7 @@ map <ESC>b  <S-Left>
 map <ESC>f <S-Right>
 
 "" F key toggles
-map <F7>    :set number!<CR>
+map <F7>    :set relativenumber!<CR>
 map <F8>    :set paste!<CR>
 map <F9>    :set wrap!<CR>
 
@@ -117,22 +139,7 @@ endfunction
 " The <CR> key should select from completion menu without adding a newline
 imap <expr> <CR> pumvisible() ? "<C-Y>" : "<CR>"
 
-if has("autocmd")
-    autocmd FileType tex setlocal makeprg=latex\ %
-    autocmd FileType tex map <F12>   :wa!<CR>:make<CR><CR>
-    "autocmd Filetype c   map <F12>   :wa!<CR>:make<CR>
-    "autocmd Filetype cpp map <F12>   :wa!<CR>:make<CR>
-    autocmd filetype javascript set tabstop=2
-    autocmd filetype javascript set softtabstop=2
-    autocmd filetype javascript set shiftwidth=2
-endif
-
 set verbose=0
-
-set wildmode=list:longest
-
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 "set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
@@ -148,3 +155,14 @@ cmap w!! w !sudo tee % >/dev/null
 au BufRead,BufNewFile *.thrift set filetype=thrift
 au! Syntax thrift source ~/.vim/thrift.vim
 "au! Syntax javascript source ~/.vim/javascript.vim
+
+if has("autocmd")
+    autocmd FileType tex setlocal makeprg=latex\ %
+    autocmd FileType tex map <F12>   :wa!<CR>:make<CR><CR>
+    "autocmd Filetype c   map <F12>   :wa!<CR>:make<CR>
+    "autocmd Filetype cpp map <F12>   :wa!<CR>:make<CR>
+    autocmd filetype javascript set tabstop=2
+    autocmd filetype javascript set softtabstop=2
+    autocmd filetype javascript set shiftwidth=2
+endif
+
