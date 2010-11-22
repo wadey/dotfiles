@@ -3,9 +3,11 @@ set nocompatible            "enable new vim-only features
 " Needed on some linux distros.
 " see
 " http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
-filetype off 
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+if exists("*pathogen#helptags")
+    filetype off 
+    call pathogen#helptags()
+    call pathogen#runtime_append_all_bundles()
+endif
 filetype plugin indent on
 
 syntax enable               "syntax highlighting
@@ -22,8 +24,12 @@ set backspace=2             "allow 'normal' backspacing
 set ruler                   "display current position in status line
 set autoindent              "indent to the level of the previous line
 set laststatus=2
-set relativenumber
-set undofile
+if exists("&relativenumber")
+    set relativenumber
+endif
+if exists("&undofile")
+    set undofile
+endif
 
 set showmatch               "display matching parentheses
 set showmode                "display the active mode in status line
@@ -49,8 +55,10 @@ set wrap
 set display+=lastline       "display the last line, even if it doesnt fit
 set textwidth=0             "When wrapping is off, break lines at 78 chars
 set formatoptions=qrn1
-set colorcolumn=80,81,82
-hi ColorColumn ctermbg=black guibg=grey10
+if exists("&colorcolumn")
+    set colorcolumn=80,81,82
+    hi ColorColumn ctermbg=black guibg=grey10
+endif
 
 set wildmenu
 set wildmode=list:longest
