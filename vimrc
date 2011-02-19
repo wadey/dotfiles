@@ -161,16 +161,9 @@ cmap w!! w !sudo tee % >/dev/null
 " set statusline=%<%f[%{GitBranch()}]\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 au BufRead,BufNewFile *.thrift set filetype=thrift
-au! Syntax thrift source ~/.vim/thrift.vim
-"au! Syntax javascript source ~/.vim/javascript.vim
 
 if has("autocmd")
-    autocmd FileType tex setlocal makeprg=latex\ %
-    autocmd FileType tex map <F12>   :wa!<CR>:make<CR><CR>
-    "autocmd Filetype c   map <F12>   :wa!<CR>:make<CR>
-    "autocmd Filetype cpp map <F12>   :wa!<CR>:make<CR>
-    autocmd filetype javascript set tabstop=2
-    autocmd filetype javascript set softtabstop=2
-    autocmd filetype javascript set shiftwidth=2
+    autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 endif
 
