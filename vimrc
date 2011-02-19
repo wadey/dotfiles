@@ -122,27 +122,30 @@ map <F11>   :wa!<CR>:!aspell -c --dont-backup "%"<CR>:e! "%"<CR><CR>
 map <F12>   :wa!<CR>:make<CR>
 
 "" smart tab completion
-function! Smart_TabComplete()
-  let line = getline('.')                         " curline
-  let substr = strpart(line, -1, col('.'))      " from start to cursor
-  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
-  if (strlen(substr)==0)                          " nothing to match on empty string
-    return "\<tab>"
-  endif
-  let has_period = match(substr, '\.') != -1      " position of period, if any
-  let has_slash = match(substr, '\/') != -1       " position of slash, if any
-  if (!has_period && !has_slash)
-    return "\<C-X>\<C-P>"                         " existing text matching
-  elseif ( has_slash )
-    return "\<C-X>\<C-F>"                         " file matching
-  else
-    return "\<C-X>\<C-O>"                         " plugin matching
-  endif
-endfunction
-:inoremap <Tab> <C-R>=Smart_TabComplete()<CR>
+" function! Smart_TabComplete()
+"   let line = getline('.')                         " curline
+"   let substr = strpart(line, -1, col('.'))      " from start to cursor
+"   let substr = matchstr(substr, "[^ \\t]*$")       " word till cursor
+"   if (strlen(substr)==0)                          " nothing to match on empty string
+"     return "\\<tab>"
+"   endif
+"   let has_period = match(substr, '\\.') != -1      " position of period, if any
+"   let has_slash = match(substr, '\\/') != -1       " position of slash, if any
+"   if (!has_period && !has_slash)
+"     return "\\<C-X>\\<C-P>"                         " existing text matching
+"   elseif ( has_slash )
+"     return "\\<C-X>\\<C-F>"                         " file matching
+"   else
+"     return "\\<C-X>\\<C-O>"                         " plugin matching
+"   endif
+" endfunction
+" :inoremap <Tab> <C-R>=Smart_TabComplete()<CR>
 
 " The <CR> key should select from completion menu without adding a newline
-imap <expr> <CR> pumvisible() ? "<C-Y>" : "<CR>"
+"imap <expr> <CR> pumvisible() ? "<C-Y>" : "<CR>"
+"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+"let g:SuperTabDefaultCompletionType = "context"
 
 set verbose=0
 
