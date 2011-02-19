@@ -1,5 +1,11 @@
 #!/bin/zsh
 
+# Make sure nobody gets these settings by accident
+if [ "$USER" = "wade" ]; then
+    export GIT_AUTHOR_NAME="Wade Simmons"
+    export GIT_AUTHOR_EMAIL="wade@wades.im"
+fi
+
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
