@@ -1,13 +1,13 @@
 [user]
-  name = 
-  email = 
+  name =
+  email =
 [github]
-  user = 
-  token = 
+  user =
+  token =
 [color]
   ui = true
 [alias]
-  st = status
+  st = status -sb
   ci = commit
   co = checkout
   br = branch
@@ -24,10 +24,19 @@
   sup = !git stash && git up && git pop
   sff = !git stash && git ff && git pop
 
+  # force stash pop to apply, even if there are uncommitted changes
+  popf = !git stash show -p | git apply && git stash drop
+  applyf = !git stash show -p | git apply
+
+  # check if a branch has been merged into the current HEAD
+  merged = !sh -c 'git rev-list HEAD | grep $(git rev-parse $0)'
+
   # git svn aliases
   #spull = !git svn fetch && git svn rebase -l
   srebase = !git stash && git svn rebase -l && git stash pop
   sdcommit = !git stash && git svn dcommit && git stash pop
+
+  purge-remote = !sh -c 'echo git branch -a | echo sed -n \"/master$/d;s?^ *remotes/$0/??p\"'
 [mergetool "mvimdiff"]
   cmd = mvimdiff \"$LOCAL\" \"$REMOTE\" \"$MERGED\" \"$BASE\"
 [mergetool "p4merge"]
@@ -40,4 +49,4 @@
 [push]
   default = current
 [core]
-	excludesfile = /Users/wade/.gitignore
+  excludesfile = /Users/wade/.gitignore
