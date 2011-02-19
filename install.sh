@@ -10,8 +10,13 @@ fi
 
 for FILE in $SH_FILES; do
     if [ -e "$HOME/.$FILE" ]; then
-        echo "backing up ~/.$FILE"
-        mv "$HOME/.$FILE" "$BACKUP/$FILE"
+        if [ -L "$HOME/.$FILE" ]; then
+            echo "not backing up ~/.$FILE, it is a symlink"
+            rm "$HOME/.$FILE"
+        else
+            echo "backing up ~/.$FILE"
+            mv "$HOME/.$FILE" "$BACKUP/$FILE"
+        fi
     fi
     echo "installing $FILE"
     ln -s "$SHDIR/$FILE" "$HOME/.$FILE"
