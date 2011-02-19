@@ -1,0 +1,5 @@
+#!/bin/sh -x
+
+mkdir -p bundle
+./update_bundles
+(cd bundle/command-t && rake make)
