@@ -86,13 +86,10 @@ set nofen                   "open all folds initially
 set printoptions=paper:letter,number:y
 
 "" some system specific commmands
-if has("unix")
-    map ;d      :r!date<CR>i:"<ESC>"add@a
-    ab  rdate    <ESC>:r!date +\%D<CR>i<BS><ESC>A
-    ab  rtime    <ESC>:r!date +\%X<CR>i<BS><ESC>A
-elseif has("win32")
-    ab  rdate    <ESC>:r!date /T<CR>i<BS><ESC>A
-    ab  rtime    <ESC>:r!time /T<CR>i<BS><ESC>A
+if has("mac")
+    iab  rtime   <ESC>:r!gdate -R<CR>i<BS><ESC>A
+elseif has("unix")
+    iab  rtime   <ESC>:r!date -R<CR>i<BS><ESC>A
 endif
     
 
