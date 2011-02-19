@@ -21,3 +21,5 @@ for FILE in $SH_FILES; do
     echo "installing $FILE"
     ln -s "$SHDIR/$FILE" "$HOME/.$FILE"
 done
+
+(cd $HOME/.vim && ./update)
