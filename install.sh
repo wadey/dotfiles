@@ -4,10 +4,6 @@ SH_FILES="zshrc zsh.d gitconfig gitignore vimrc vim gvimrc ackrc screenrc ctags"
 BACKUP="backups/`date +'%Y%m%d-%H%M%S'`"
 SHDIR=$PWD
 
-if [ ! -d $BACKUP ]; then
-    mkdir -p $BACKUP
-fi
-
 for FILE in $SH_FILES; do
     if [ -e "$HOME/.$FILE" ]; then
         if [ -L "$HOME/.$FILE" ]; then
@@ -15,6 +11,7 @@ for FILE in $SH_FILES; do
             rm "$HOME/.$FILE"
         else
             echo "backing up ~/.$FILE"
+            mkdir -p $BACKUP
             mv "$HOME/.$FILE" "$BACKUP/$FILE"
         fi
     fi
