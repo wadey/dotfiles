@@ -11,7 +11,7 @@ fi
 for FILE in $SH_FILES; do
     if [ -e "$HOME/.$FILE" ]; then
         if [ -L "$HOME/.$FILE" ]; then
-            echo "not backing up ~/.$FILE, it is a symlink"
+            echo "not backing up ~/.$FILE, it is a symlink -> `readlink $HOME/.$FILE`"
             rm "$HOME/.$FILE"
         else
             echo "backing up ~/.$FILE"
