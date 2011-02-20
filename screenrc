@@ -12,3 +12,7 @@ vbell off                 # no visual bell
 # Display status line: All windows, with the active window highlighted. Time and date right aligned.
 # hardstatus alwayslastline "%{= kR} %-Lw%{=b Kk} %n%f %t %{-}%+Lw %=%{= kR}%C%A  %D, %M/%d/%Y %{= dd}"
 hardstatus alwayslastline "%-Lw%{=b bw} %n%f %t %{-}%+Lw %=%C%A  %D, %M/%d/%Y %{= dd}"
+
+# http://www.jukie.net/bart/blog/screen-ssh-agent
+unsetenv SSH_AUTH_SOCK
+setenv SSH_AUTH_SOCK $HOME/.screen/ssh-auth-sock.$HOST
