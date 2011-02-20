@@ -161,6 +161,7 @@ cmap w!! w !sudo tee % >/dev/null
 " set statusline=%<%f[%{GitBranch()}]\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 au BufRead,BufNewFile *.thrift set filetype=thrift
+au BufRead,BufNewFile *.json set filetype=json
 
 if has("autocmd")
     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
