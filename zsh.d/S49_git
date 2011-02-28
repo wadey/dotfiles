@@ -4,6 +4,8 @@
 if [ "$USER" = "wade" ]; then
     export GIT_AUTHOR_NAME="Wade Simmons"
     export GIT_AUTHOR_EMAIL="wade@wades.im"
+    export GIT_COMMITTER_NAME="Wade Simmons"
+    export GIT_COMMITTER_EMAIL="wade@wades.im"
 fi
 
 export GIT_PS1_SHOWDIRTYSTATE=1
