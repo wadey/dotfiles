@@ -2,4 +2,4 @@
 
 mkdir -p bundle
 ./update_bundles
-(cd bundle/command-t && rake make)
+(cd bundle/Command-T && rake make)
