@@ -16,5 +16,5 @@ if [ -n DISPLAY ]; then
 fi
 
 __which() {
-    /usr/bin/which $1 >/dev/null
+    /usr/bin/which $1 >/dev/null 2>&1
 }
