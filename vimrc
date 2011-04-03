@@ -168,3 +168,5 @@ if has("autocmd")
     autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 endif
 
+" Removes trailing spaces
+command TrimWhiteSpace %s/\v\s+$//
