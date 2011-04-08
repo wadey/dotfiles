@@ -171,7 +171,6 @@ endif
 " Removes trailing spaces
 command TrimWhiteSpace %s/\v\s+$//
 
-set t_Co=256
 if (&t_Co == 256 || &t_Co == 88) && !has('gui_running')
   " Use the guicolorscheme plugin to makes 256-color or 88-color
   " terminal use GUI colors rather than cterm colors.
