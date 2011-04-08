@@ -1,5 +1,6 @@
 " Maintainer: Yoshimasa NIWA<niw@disense.com>
 " Last Change: 14 Jun 2006
+" w/ Modifications by Wade Simmons
 
 set background=dark
 hi clear
@@ -44,26 +45,26 @@ hi Identifier     guifg=#9B703F
 hi Function       guifg=#9B5C2E
 hi Statement      guifg=#CF7D34
 hi Conditional    guifg=#9B703F
-hi Repeat         guifg=khaki
+hi Repeat         guifg=#F0E68C
 hi Label          guifg=#E9C062
 hi Operator       guifg=#CF6A4C
 hi Keyword        guifg=#E9C062
-hi Exception      guifg=khaki
-hi PreProc        guifg=khaki4
-hi Include        guifg=khaki4
-hi Define         guifg=khaki1
+hi Exception      guifg=#F0E68C
+hi PreProc        guifg=#8B864E
+hi Include        guifg=#8B864E
+hi Define         guifg=#FFF68F
 hi Macro          guifg=#9B703F
-hi PreCondit      guifg=khaki3
-hi Type           guifg=khaki3
-hi StorageClass   guifg=tan
-hi Structure      guifg=DarkGoldenrod
-hi Typedef        guifg=khaki3
-hi Special        guifg=IndianRed
-hi SpecialChar    guifg=DarkGoldenrod
-hi Tag            guifg=DarkKhaki
-hi Delimiter      guifg=DarkGoldenrod
-hi SpecialComment guifg=cornsilk
-hi Debug          guifg=brown
+hi PreCondit      guifg=#CDC673
+hi Type           guifg=#CDC673
+hi StorageClass   guifg=#D2B48C
+hi Structure      guifg=#B8860B
+hi Typedef        guifg=#CDC673
+hi Special        guifg=#CD5C5C
+hi SpecialChar    guifg=#B8860B
+hi Tag            guifg=#BDB76B
+hi Delimiter      guifg=#B8860B
+hi SpecialComment guifg=#FFF8DC
+hi Debug          guifg=#A52A2A
 hi Underlined     guifg=#Cf6A4C
 hi Ignore         guifg=#494949
 hi Error          guifg=#CF6A4C    guibg=#420E09
@@ -72,3 +73,7 @@ hi Pmenu          guifg=#141414    guibg=#CDA869
 hi PmenuSel       guifg=#F8F8F8    guibg=#9B703F
 hi PmenuSbar      guibg=#DAEFA3
 hi PmenuThumb     guifg=#8F9D6A
+
+hi NonText        guibg=#1A1A1A
+hi CursorLine     guibg=#1A1A1A
+hi ColorColumn    guibg=#1A1A1A

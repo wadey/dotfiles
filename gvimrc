@@ -17,12 +17,9 @@ set lines=60
 
 "highlight Normal guibg=grey90
 "highlight Cursor guibg=green guifg=NONE
-highlight NonText guibg=grey10
 "highlight Constant guibg=grey90
 "highlight Special gui=NONE guibg=grey90
 "highlight StatusLine gui=bold guifg=white guibg=blue
-highlight CursorLine guibg=grey10
-hi ColorColumn guibg=grey10
 setlocal cul
 
 macm File.Open\ Tab\.\.\.<Tab>:tabnew key=<D-M-t>
