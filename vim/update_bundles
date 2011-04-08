@@ -19,7 +19,8 @@ git_bundles = [
 vim_org_scripts = [
   ["puppet_syntax", "8052", "syntax"],
   ["json", "10853", "syntax"],
-  ["IndexedSearch", "7062",  "plugin"]
+  ["IndexedSearch", "7062",  "plugin"],
+  ["guicolorscheme", "10162", "plugin"]
 ]
 
 vim_org_zips = [
