@@ -29,6 +29,7 @@ if exists("&relativenumber")
 endif
 if exists("&undofile")
     set undofile
+    set undodir=~/.vimundo
 endif
 
 set showmatch               "display matching parentheses
