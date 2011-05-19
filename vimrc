@@ -63,7 +63,7 @@ endif
 
 set wildmenu
 set wildmode=list:longest
-set wildignore+=*.o,*.obj,.git
+set wildignore+=*.o,*.obj,.git,node_modules
 
 "set list
 "set listchars=tab:>.,trail:.,extends:#,nbsp:.
