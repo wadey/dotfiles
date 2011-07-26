@@ -7,7 +7,7 @@ git_bundles = [
   "git://github.com/tpope/vim-fugitive.git",
   "git://github.com/tpope/vim-git.git",
   "git://github.com/kchmck/vim-coffee-script.git",
-  "git://github.com/pangloss/vim-javascript.git",
+  "git://github.com/wadey/vim-javascript.git",
   "git://github.com/wincent/Command-T.git",
   "git://github.com/tsaleh/vim-align.git",
   "git://github.com/tsaleh/vim-supertab.git",
