@@ -160,6 +160,24 @@ cmap w!! w !sudo tee % >/dev/null
 " GIT
 " set laststatus=2
 " set statusline=%<%f[%{GitBranch()}]\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+" set statusline=%<%f\ %3*%{strlen(&ft)?&ft:'none'}%*\ %4*%{fugitive#statusline()}%*%h%m%r%=%-14.(%l,%c%V%)\ %P
+
+" From https://gist.github.com/840731
+set statusline=\ "
+set statusline+=%-25.80f\ " file name minimum 25, maxiumum 80 (right justified)
+set statusline+=%h "help file flag
+set statusline+=%r "read only flag
+set statusline+=%m "modified flag
+set statusline+=%w "preview flag
+set statusline+=\ "
+set statusline+=[
+set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
+set statusline+=]\ "
+set statusline+=%1*%{fugitive#statusline()}%*\ " Fugitive
+"set statusline+=%5*%{Rvm#statusline()}%*\ " RVM
+"set statusline+=%6*%{SyntasticStatuslineFlag()}%* " Syntastic Syntax Checking
+set statusline+=%= " right align
+set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 
 au BufRead,BufNewFile *.thrift set filetype=thrift
 au BufRead,BufNewFile *.json set filetype=json
