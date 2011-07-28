@@ -62,6 +62,8 @@ if [ $(uname) = 'Darwin' ]; then
     alias vim='mvim -v'
     EDITOR='mvim -v'
   fi
+elif __has apt-get; then
+  alias apti='sudo apt-get update && sudo apt-get install'
 fi
 
 alias sudovim=sudo\ vim
