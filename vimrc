@@ -1,5 +1,7 @@
 set nocompatible            "enable new vim-only features
 
+let mapleader = ","
+
 source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
