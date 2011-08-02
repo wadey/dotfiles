@@ -198,3 +198,8 @@ endif
 
 " Support xterm mouse
 set mouse=a
+
+" iTerm2 cursor
+" http://www.iterm2.com/#/section/documentation/escape_codes
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
