@@ -6,12 +6,14 @@ set transparency=1
 set guifont=Menlo:h12
 
 " GUI Option to remove the Toolbar (T)
-set guioptions-=T
+" set guioptions-=T
 
 " set guicursor+=a:blinkon0 " Stop cursor blinking
 
 " Use console dialogs when possible
-set guioptions+=c
+" set guioptions+=c
+
+set guioptions=gecm
 
 " Number of horizontal lines on the screen
 set lines=60
