@@ -170,9 +170,13 @@ set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
 set statusline+=]\ "
 set statusline+=%1*%{fugitive#statusline()}%*\ " Fugitive
 "set statusline+=%5*%{Rvm#statusline()}%*\ " RVM
-"set statusline+=%6*%{SyntasticStatuslineFlag()}%* " Syntastic Syntax Checking
+set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%* " Syntastic Syntax Checking
 set statusline+=%= " right align
 set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
+
+" Don't count warnings as errors
+" let g:syntastic_quiet_warnings=1
+let g:syntastic_stl_format = '%E{[Err: %fe #%e]}'
 
 au BufRead,BufNewFile *.thrift set filetype=thrift
 au BufRead,BufNewFile *.json set filetype=json
