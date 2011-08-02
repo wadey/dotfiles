@@ -4,6 +4,7 @@
 #   http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
 
 git_bundles = [ 
+  "git://github.com/tpope/vim-pathogen.git",
   "git://github.com/tpope/vim-fugitive.git",
   "git://github.com/tpope/vim-git.git",
   "git://github.com/kchmck/vim-coffee-script.git",

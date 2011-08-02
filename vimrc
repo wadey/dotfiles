@@ -1,13 +1,8 @@
 set nocompatible            "enable new vim-only features
 
-" Needed on some linux distros.
-" see
-" http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
-"if exists("*pathogen#helptags")
-    filetype off 
-    call pathogen#helptags()
-    call pathogen#runtime_append_all_bundles()
-"endif
+source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
 filetype plugin indent on
 
 syntax enable               "syntax highlighting
