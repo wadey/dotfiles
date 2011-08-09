@@ -16,6 +16,12 @@ git_bundles = [
   "git://github.com/int3/vim-taglist-plus.git",
   "git://github.com/mileszs/ack.vim.git",
   "git://github.com/scrooloose/syntastic.git",
+  "git://github.com/tpope/vim-surround.git",
+  "git://github.com/plasticboy/vim-markdown.git",
+]
+
+svn_bundles = [
+  ["conque", "http://conque.googlecode.com/svn/trunk"]
 ]
 
 vim_org_scripts = [
@@ -48,6 +54,12 @@ git_bundles.each do |url|
   puts "  Unpacking #{url} into #{dir}"
   `git clone #{url} #{dir}`
   FileUtils.rm_rf(File.join(dir, ".git"))
+end
+
+svn_bundles.each do |name, url|
+  dir = name
+  puts "  Unpacking SVN #{url} into #{dir}"
+  `svn co #{url} #{dir}`
 end
 
 vim_org_scripts.each do |name, script_id, script_type|
