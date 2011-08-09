@@ -186,6 +186,13 @@ au BufRead,BufNewFile *.json set filetype=json
 if has("autocmd")
     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+    " http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/
+    autocmd BufReadPost fugitive://* set bufhidden=delete
+    autocmd User fugitive
+      \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+      \   nnoremap <buffer> .. :edit %:h<CR> |
+      \ endif
 endif
 
 " Removes trailing spaces
