@@ -57,12 +57,7 @@ alias h=history
 # alias grep=egrep
 alias vi=vim
 
-if [ $(uname) = 'Darwin' ]; then
-  if __has mvim; then
-    alias vim='mvim -v'
-    EDITOR='mvim -v'
-  fi
-elif __has apt-get; then
+if __has apt-get; then
   alias apti='sudo apt-get update && sudo apt-get install'
 fi
 
