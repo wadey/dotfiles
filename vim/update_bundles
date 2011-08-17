@@ -19,6 +19,7 @@ git_bundles = [
   "git://github.com/tpope/vim-surround.git",
   "git://github.com/plasticboy/vim-markdown.git",
   "git://github.com/rson/vim-conque.git",
+  "git://github.com/cespare/vim-bclose.git",
 ]
 
 vim_org_scripts = [
