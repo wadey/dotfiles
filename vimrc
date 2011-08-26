@@ -210,5 +210,20 @@ if (&t_Co == 256 || &t_Co == 88) && !has('gui_running')
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+" ConqueTerm settings
+let g:ConqueTerm_ReadUnfocused = 1
+let g:ConqueTerm_InsertOnEnter = 1
+let g:ConqueTerm_CWInsert = 1
+
+" Makes it easy to run a shells
+" example: can do ":Node %" to run the current file
+command! -nargs=* -complete=file Shell ConqueTermSplit <args>
+command! -nargs=* -complete=file Zsh ConqueTermSplit zsh <args>
+command! -nargs=* -complete=file Node ConqueTermSplit node <args>
+command! -nargs=* -complete=file Python ConqueTermSplit python <args>
+
+" use python json to Tidy a file
+command! -range=% -nargs=* Json <line1>,<line2>!python -mjson.tool <args>
+
 " Support xterm mouse
 set mouse=a
