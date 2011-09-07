@@ -194,7 +194,7 @@ if has("autocmd")
 endif
 
 " Removes trailing spaces
-command TrimWhiteSpace %s/\v\s+$//
+command! TrimWhiteSpace %s/\v\s+$//
 
 if (&t_Co == 256 || &t_Co == 88) && !has('gui_running')
   " Use the guicolorscheme plugin to makes 256-color or 88-color
