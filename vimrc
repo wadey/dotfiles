@@ -60,11 +60,7 @@ endif
 
 set wildmenu
 set wildmode=list:longest
-set wildignore+=*.o,*.obj,.git,node_modules
-
-"set list
-"set listchars=tab:>.,trail:.,extends:#,nbsp:.
-set listchars=tab:▸\ ,eol:¬
+set wildignore+=*.o,*.obj,*.pyc,.git,node_modules
 
 "" TOhtml stuff
 let html_use_css=1          "use css in HTML output
@@ -89,7 +85,6 @@ if has("mac")
 elseif has("unix")
     iab  rtime   <ESC>:r!date -R<CR>i<BS><ESC>A
 endif
-    
 
 "" toggle margins
 map ;L ;on-m
@@ -147,7 +142,10 @@ map <F12>   :wa!<CR>:make<CR>
 
 set verbose=0
 
+set list
 "set listchars=tab:>-,trail:·,eol:$
+"set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,trail:•
 nmap <silent> <leader>s :set nolist!<CR>
 nmap <silent> <leader>n :silent :nohlsearch<CR>
 nmap . .`[
