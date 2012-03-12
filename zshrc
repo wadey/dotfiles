@@ -7,7 +7,9 @@ echo_msg() {
   local color=$1; shift
   local header=$1; shift
 
-  echo "  ${fg_bold[$color]}$header${fg_no_bold[default]}  $*"
+  if [ "$TERM_PROGRAM" != "DTerm" ]; then
+      echo "  ${fg_bold[$color]}$header${fg_no_bold[default]}  $*"
+  fi
 }
 
 echo_warn() { echo_msg yellow WARN $* }
