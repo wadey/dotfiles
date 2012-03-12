@@ -60,7 +60,7 @@ endif
 
 set wildmenu
 set wildmode=list:longest
-set wildignore+=*.o,*.obj,*.pyc,.git,node_modules
+set wildignore+=*.o,*.obj,*.pyc,*.class,.git,node_modules,lib-cov
 
 "" TOhtml stuff
 let html_use_css=1          "use css in HTML output
@@ -104,6 +104,15 @@ map <C-F>   <Right>
 map <C-B>   <Left>
 map <ESC>b  <S-Left>
 map <ESC>f <S-Right>
+
+" Textmate like text movement
+nmap <C-Up> [e
+nmap <C-Down> ]e
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
+" Visually select the text that was last edited/pasted
+nmap gV `[v`]
 
 "" F key toggles
 map <F7>    :set relativenumber!<CR>
@@ -182,7 +191,11 @@ au BufRead,BufNewFile *.thrift set filetype=thrift
 au BufRead,BufNewFile *.json set filetype=json
 
 if has("autocmd")
+    autocmd Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
+
     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
     " http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/

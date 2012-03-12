@@ -5,6 +5,7 @@
 
 git_bundles = [ 
   "git://github.com/tpope/vim-pathogen.git",
+  "git://github.com/tpope/vim-repeat.git",
   "git://github.com/tpope/vim-fugitive.git",
   "git://github.com/tpope/vim-git.git",
   "git://github.com/kchmck/vim-coffee-script.git",
@@ -20,6 +21,10 @@ git_bundles = [
   "git://github.com/plasticboy/vim-markdown.git",
   "git://github.com/rson/vim-conque.git",
   "git://github.com/cespare/vim-bclose.git",
+  "git://github.com/jnwhiteh/vim-golang.git",
+  "git://github.com/tpope/vim-unimpaired.git",
+  "git://github.com/bmatheny/vim-scala.git",
+  "git://github.com/mjwall/clj-vim.git"
 ]
 
 vim_org_scripts = [
@@ -51,7 +56,7 @@ git_bundles.each do |url|
   dir = url.split('/').last.sub(/\.git$/, '')
   puts "  Unpacking #{url} into #{dir}"
   `git clone #{url} #{dir}`
-  FileUtils.rm_rf(File.join(dir, ".git"))
+  # FileUtils.rm_rf(File.join(dir, ".git"))
 end
 
 vim_org_scripts.each do |name, script_id, script_type|
