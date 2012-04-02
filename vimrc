@@ -154,7 +154,11 @@ set verbose=0
 set list
 "set listchars=tab:>-,trail:·,eol:$
 "set listchars=tab:▸\ ,eol:¬
-set listchars=tab:▸\ ,trail:•
+if &encoding == "utf-8"
+    set listchars=tab:▸\ ,trail:•
+else
+    set listchars=tab:>-,trail:.
+endif
 nmap <silent> <leader>s :set nolist!<CR>
 nmap <silent> <leader>n :silent :nohlsearch<CR>
 nmap . .`[
