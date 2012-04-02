@@ -25,4 +25,10 @@ plugins=(git brew osx)
 
 ZSH_CUSTOM=~/.zsh
 
+# Work around bug with custom themes
+# https://github.com/robbyrussell/oh-my-zsh/pull/1049
+ZSH_THEME=""
+
 source $ZSH/oh-my-zsh.sh
+
+source $ZSH_CUSTOM/wadey.zsh-theme
