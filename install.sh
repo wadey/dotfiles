@@ -1,8 +1,12 @@
 #!/bin/sh
 
-SH_FILES="zshrc zsh.d gitconfig gitignore vimrc vim gvimrc ackrc screenrc ctags"
+SH_FILES="zshrc zsh gitconfig gitignore vimrc vim gvimrc ackrc screenrc ctags"
 BACKUP="backups/`date +'%Y%m%d-%H%M%S'`"
 SHDIR=$PWD
+
+if [[ ! -d ~/.oh-my-zsh ]]; then
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
 
 for FILE in $SH_FILES; do
     if [ -e "$HOME/.$FILE" ]; then

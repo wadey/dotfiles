@@ -1,0 +1,1 @@
+path=(~/bin $path)

@@ -1,21 +1,28 @@
-#!/bin/zsh
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-autoload -U compinit
-autoload colors && colors
+ZSH_THEME="wadey"
 
-echo_msg() {
-  local color=$1; shift
-  local header=$1; shift
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
 
-  if [ "$TERM_PROGRAM" != "DTerm" ]; then
-      echo "  ${fg_bold[$color]}$header${fg_no_bold[default]}  $*"
-  fi
-}
+# Comment this out to disable weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
 
-echo_warn() { echo_msg yellow WARN $* }
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
 
-setopt extended_glob
-for zshrc_snipplet in ~/.zsh.d/S[0-9][0-9]*[^~] ; do
-  echo_msg green loading ${zshrc_snipplet##*/}
-  source $zshrc_snipplet
-done
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git brew osx)
+
+ZSH_CUSTOM=~/.zsh
+
+source $ZSH/oh-my-zsh.sh
