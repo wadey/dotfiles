@@ -29,6 +29,8 @@ ZSH_CUSTOM=~/.zsh
 # https://github.com/robbyrussell/oh-my-zsh/pull/1049
 ZSH_THEME=""
 
+path=(~/bin /usr/local/bin $path)
+
 source $ZSH/oh-my-zsh.sh
 
 source $ZSH_CUSTOM/wadey.zsh-theme
