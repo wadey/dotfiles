@@ -13,4 +13,4 @@ __git_prompt() {
   __git_ps1 "[%s]" | sed 's/%/%%/g'
 }
 
-PROMPT="%B$WADEY_COLOR%m%f%b %$(($COLUMNS - 60))<..<%~%<<%B%F{yellow}$(__git_prompt)%(?.%F{green}.%F{red})%#%f%b "
+PROMPT='%B$WADEY_COLOR%m%f%b %$(($COLUMNS - 60))<..<%~%<<%B%F{yellow}$(__git_prompt)%(?.%F{green}.%F{red})%#%f%b '
