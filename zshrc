@@ -25,11 +25,15 @@ plugins=(git brew osx)
 
 ZSH_CUSTOM=~/.zsh
 
+path=(~/bin /usr/local/bin $path)
+
+if [[ -f "$HOME/.zshlocal" ]]; then
+    source $HOME/.zshlocal
+fi
+
 # Work around bug with custom themes
 # https://github.com/robbyrussell/oh-my-zsh/pull/1049
 ZSH_THEME=""
-
-path=(~/bin /usr/local/bin $path)
 
 source $ZSH/oh-my-zsh.sh
 
