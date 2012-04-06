@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for SERVER in $*; do
+    echo
+    echo $SERVER
+    echo
+    ssh $SERVER
+done

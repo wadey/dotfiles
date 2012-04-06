@@ -25,7 +25,7 @@ plugins=(git brew osx)
 
 ZSH_CUSTOM=~/.zsh
 
-path=(~/bin /usr/local/bin $path)
+path=(~/bin ~/.dotfiles/bin /usr/local/bin $path)
 
 if [[ -f "$HOME/.zshlocal" ]]; then
     source $HOME/.zshlocal
