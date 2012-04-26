@@ -10,7 +10,7 @@ if [ -e "$HOME/.dotfiles" -a ! -L "$HOME/.dotfiles" ]; then
 fi
 ln -s "$SHDIR" "$HOME/.dotfiles"
 
-if [[ ! -d ~/.oh-my-zsh ]]; then
+if [ ! -d ~/.oh-my-zsh ]; then
     git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 fi
 
