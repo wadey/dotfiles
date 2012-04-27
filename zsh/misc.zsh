@@ -5,3 +5,4 @@ WATCHFMT='%n %a at %t %w from %M'
 REPORTTIME=2
 
 unsetopt correct_all
+unsetopt share_history
