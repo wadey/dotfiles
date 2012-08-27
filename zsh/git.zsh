@@ -19,4 +19,4 @@ git_prompt_help() {
     echo "<>    Diverged from upstream"
 }
 
-source $ZSH_CUSTOM/git-completion.bash
+source $ZSH_CUSTOM/git-prompt.sh
