@@ -13,7 +13,7 @@ git_bundles = [
   "git://github.com/wincent/Command-T.git",
 #  "git://github.com/tsaleh/vim-align.git",
   "git://github.com/tsaleh/vim-supertab.git",
-  "git://github.com/noxoc/vim-tcomment.git",
+  "git://github.com/vim-scripts/tComment.git",
   "git://github.com/int3/vim-taglist-plus.git",
   "git://github.com/mileszs/ack.vim.git",
   "git://github.com/scrooloose/syntastic.git",
