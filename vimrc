@@ -1,11 +1,6 @@
-set nocompatible            "enable new vim-only features
-
 let mapleader = ","
 
-source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-
-filetype plugin indent on
+source ~/.vim/bundles.vim
 
 syntax enable               "syntax highlighting
 
@@ -216,7 +211,7 @@ command! TrimWhiteSpace %s/\v\s+$//
 if (&t_Co == 256 || &t_Co == 88) && !has('gui_running')
   " Use the guicolorscheme plugin to makes 256-color or 88-color
   " terminal use GUI colors rather than cterm colors.
-  runtime! bundle/guicolorscheme/plugin/guicolorscheme.vim
+  runtime! bundle/guicolorscheme.vim/plugin/guicolorscheme.vim
   GuiColorScheme twilight
 
   " iTerm2 cursor

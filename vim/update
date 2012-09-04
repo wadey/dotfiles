@@ -1,5 +1,6 @@
-#!/bin/sh -x
+#!/bin/sh -ex
 
 mkdir -p bundle
-./update_bundles
-(cd bundle/Command-T && rake make)
+[ ! -d bundle/vundle ] && rm -rf bundle/* && git clone https://github.com/gmarik/vundle.git bundle/vundle
+vim -u bundles.vim +BundleInstall +qall
+(cd bundle/command-t && rake make)
