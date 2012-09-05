@@ -20,6 +20,7 @@ Bundle 'bmatheny/vim-scala'
 Bundle 'mjwall/clj-vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'sprsquish/thrift.vim'
+Bundle 'uarun/vim-protobuf'
 Bundle 'git://git.wincent.com/command-t.git'
 
 Bundle 'Puppet-Syntax-Highlighting'
