@@ -1,3 +1,9 @@
+if [[ -o login && -d ~/.dotfiles/.git ]]; then
+    autoload -U colors && colors
+    echo -n " $fg[green]∵$fg_reset "
+    GIT_DIR=~/.dotfiles/.git git log --pretty=format:'%C(yellow)%h %C(red)%ad %C(reset)%s' --date=short 2>/dev/null | head -1
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
