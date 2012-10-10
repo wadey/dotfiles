@@ -22,6 +22,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'sprsquish/thrift.vim'
 Bundle 'uarun/vim-protobuf'
 Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'kien/ctrlp.vim'
 
 Bundle 'Puppet-Syntax-Highlighting'
 Bundle 'JSON.vim'
