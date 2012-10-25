@@ -4,7 +4,14 @@ if [ $(uname) = 'Darwin' ]; then
         alias ls='gls --color=auto'
     fi
 
-    export JAVA_HOME=`/usr/libexec/java_home`
+    function java7() {
+        export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+    }
+    function java6() {
+        export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+    }
+
+    java6
 
     if [[ -n "$commands[brew]" ]]; then
         if [[ -n "$commands[groovy]" ]]; then
