@@ -1,8 +1,26 @@
 #!/bin/sh
 
-for SERVER in $*; do
+if [ $# -eq 0 ]; then
+    echo "Usage: sshloop server ... [-- ssharg ...]" 2>&1
+    echo "Examples:" 2>&1
+    echo "  sshloop myserver-{0..5}" 2>&1
+    echo "  sshloop myserver-{0..5} -- 'echo hi'" 2>&1
+    exit 2
+fi
+
+SERVERS=""
+
+for i; do
+    shift
+    if [ "$i" = "--" ]; then
+        break
+    fi
+    SERVERS="$SERVERS $i"
+done
+
+for SERVER in $SERVERS; do
     echo
     echo $SERVER
     echo
-    ssh $SERVER
+    ssh $SERVER $*
 done
