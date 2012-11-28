@@ -217,17 +217,6 @@ if (&t_Co == 256 || &t_Co == 88) && !has('gui_running')
   " terminal use GUI colors rather than cterm colors.
   runtime! bundle/guicolorscheme.vim/plugin/guicolorscheme.vim
   GuiColorScheme twilight
-
-  " iTerm2 cursor
-  " http://www.iterm2.com/#/section/documentation/escape_codes
-  " Use a bar-shaped cursor for insert mode, even through tmux.
-  if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-  else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  endif
 endif
 
 " ConqueTerm settings
