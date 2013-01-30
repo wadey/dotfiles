@@ -10,31 +10,16 @@ set tabstop=4               "tab = 4 spaces
 set softtabstop=4           "tab = 4 spaces
 set shiftwidth=4            "tab = 4 spaces
 set expandtab               "turn tabs in spaces
-set smarttab                "be smart about deleting tab space, etc
 
-set backspace=2             "allow 'normal' backspacing
-set ruler                   "display current position in status line
-set autoindent              "indent to the level of the previous line
-set laststatus=2
 if exists("&relativenumber")
     set relativenumber
 endif
-if exists("&undofile")
-    set undofile
-    set undodir=~/.vimundo
-endif
-
-set showmatch               "display matching parentheses
-set showmode                "display the active mode in status line
-set showcmd                 "display key commands in status line
-"set showbreak=+             "display '-> ' before wrapped lines
 
 nnoremap / /\v
 vnoremap / /\v
 set ignorecase              "ignore case in searches
 set smartcase
 set gdefault
-set incsearch               "highlight search matches as you type them
 set hlsearch                "highlight search items"
 
 set modeline                "read modeline from files"
@@ -45,7 +30,6 @@ set hidden                  "hide buffers instead of closing them
 
 "" wrapping stuff
 set wrap
-set display+=lastline       "display the last line, even if it doesnt fit
 set textwidth=0             "When wrapping is off, break lines at 78 chars
 set formatoptions=qrn1
 if exists("&colorcolumn")
@@ -53,7 +37,6 @@ if exists("&colorcolumn")
     hi ColorColumn ctermbg=black guibg=grey10
 endif
 
-set wildmenu
 set wildmode=list:longest
 set wildignore+=*.o,*.obj,*.pyc,*.class,.git,node_modules,lib-cov
 
@@ -147,13 +130,6 @@ map <F12>   :wa!<CR>:make<CR>
 set verbose=0
 
 set list
-"set listchars=tab:>-,trail:·,eol:$
-"set listchars=tab:▸\ ,eol:¬
-if &encoding == "utf-8"
-    set listchars=tab:▸\ ,trail:•
-else
-    set listchars=tab:>-,trail:.
-endif
 nmap <silent> <leader>s :set nolist!<CR>
 nmap <silent> <leader>n :silent :nohlsearch<CR>
 nmap . .`[
