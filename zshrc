@@ -27,20 +27,16 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew osx mvn)
+plugins=(git brew osx mvn rbenv)
 
 ZSH_CUSTOM=~/.zsh
 
 path=(~/bin ~/.dotfiles/bin /usr/local/bin $path)
+fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 if [[ -f "$HOME/.zshlocal" ]]; then
     source $HOME/.zshlocal
 fi
 
-# Work around bug with custom themes
-# https://github.com/robbyrussell/oh-my-zsh/pull/1049
-ZSH_THEME=""
-
 source $ZSH/oh-my-zsh.sh
-
-source $ZSH_CUSTOM/wadey.zsh-theme
