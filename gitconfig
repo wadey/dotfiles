@@ -36,6 +36,9 @@
   srebase = !git stash && git svn rebase -l && git stash pop
   sdcommit = !git stash && git svn dcommit && git stash pop
 
+  # move the last commit to a new branch
+  rebranch = !sh -c 'git branch $0 && git reset --hard HEAD^ && git checkout $0'
+
   purge-remote = !sh -c 'echo git branch -a | echo sed -n \"/master$/d;s?^ *remotes/$0/??p\"'
 [mergetool "mvimdiff"]
   cmd = mvimdiff \"$LOCAL\" \"$REMOTE\" \"$MERGED\" \"$BASE\"
