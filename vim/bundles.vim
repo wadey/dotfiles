@@ -32,6 +32,7 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'guns/vim-clojure-static'
+Bundle 'airblade/vim-gitgutter'
 
 Bundle 'Puppet-Syntax-Highlighting'
 Bundle 'JSON.vim'
