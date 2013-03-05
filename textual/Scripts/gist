@@ -1,0 +1,5 @@
+#!/bin/sh
+
+URL=`pbpaste | jist $*`
+
+echo "$URL"
