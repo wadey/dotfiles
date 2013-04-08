@@ -33,6 +33,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'guns/vim-clojure-static'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'jinfield/vim-nginx'
 
 Bundle 'Puppet-Syntax-Highlighting'
 Bundle 'JSON.vim'
