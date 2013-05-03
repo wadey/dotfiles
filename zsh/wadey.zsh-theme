@@ -16,7 +16,7 @@ if [[ -z "$functions[__git_ps1]" ]]; then
 fi
 
 __git_prompt() {
-  __git_ps1 "[%s]" | sed 's/%/%%/g'
+  __git_ps1 "[%s]"
 }
 
 PROMPT='$WADEY_USER%B$WADEY_COLOR%m%f%b %$(($COLUMNS - 60))<..<%~%<<%B%F{yellow}$(__git_prompt)%(?.%F{green}.%F{red})%#%f%b '
