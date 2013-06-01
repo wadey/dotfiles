@@ -11,8 +11,9 @@ set softtabstop=4           "tab = 4 spaces
 set shiftwidth=4            "tab = 4 spaces
 set expandtab               "turn tabs in spaces
 
+set number
 if exists("&relativenumber")
-    set relativenumber
+    set norelativenumber
 endif
 
 nnoremap / /\v
@@ -172,6 +173,7 @@ if has("autocmd")
     autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4 nolist
 
     " http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/
     autocmd BufReadPost fugitive://* set bufhidden=delete
@@ -240,3 +242,6 @@ function! SelectMatch()
         norm! gv
     endif
 endfunction
+
+" For vim-gitgutters
+highlight clear SignColumn
