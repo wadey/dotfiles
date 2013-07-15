@@ -1,0 +1,46 @@
+#!/bin/zsh -e
+
+PARALLEL=0
+SEP="│"
+#SEP="║"
+#START="╖"
+START="╭╼"
+
+while getopts ":p" opt; do
+    case $opt in
+    p)
+        PARALLEL=1
+        ;;
+    \?)
+        echo "Invalid option: -$OPTARG" >&2
+        ;;
+    esac
+done
+
+shift $((OPTIND-1))
+
+CMD=$1
+shift
+
+MAX=0
+for d in *(/); do
+    if [ ${#d} -gt $MAX ]; then
+        MAX=${#d}
+    fi
+done
+
+for d in *(/); do
+    if [ $PARALLEL = 1 ]; then
+        PREFIX=$(printf "%-${MAX}s" $d)
+        (pushd $d; $CMD "$@" 2>&1 | ts "$PREFIX $SEP"; popd) &
+    else
+        # if [ -n "$START" ]; then
+        #     echo "$PREFIX $START"
+        # fi
+        # pushd $d; $CMD "$@" 2>&1 | ts "$PREFIX $SEP"; popd
+        echo "$START $d"
+        pushd $d; $CMD "$@" 2>&1 | ts "$SEP  "; popd
+    fi
+done
+
+wait
