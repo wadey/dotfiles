@@ -21,5 +21,9 @@ if [ $(uname) = 'Darwin' ]; then
         if [[ -n "$commands[go]" ]]; then
             path=($path "$(brew --prefix go)/bin")
         fi
+
+        if [[ -n "$commands[npm]" ]]; then
+            path=($path /usr/local/share/npm/bin)
+        fi
     fi
 fi
