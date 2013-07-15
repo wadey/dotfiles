@@ -25,6 +25,9 @@ set lines=60
 "highlight StatusLine gui=bold guifg=white guibg=blue
 setlocal cul
 
-macm File.Open\ Tab\.\.\.<Tab>:tabnew key=<D-M-t>
-macm File.New\ Tab key=<D-S-t>
+macmenu File.Open\ Tab\.\.\.<Tab>:tabnew key=<D-M-t>
+macmenu File.New\ Tab key=<D-S-t>
+macmenu File.Print key=<nop>
 nmap <D-t> :CommandT<CR>
+nmap <D-p> :CtrlP<CR>
+nmap <D-P> :CtrlPMRU<CR>

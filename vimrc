@@ -135,8 +135,6 @@ nmap <silent> <leader>s :set nolist!<CR>
 nmap <silent> <leader>n :silent :nohlsearch<CR>
 nmap . .`[
 
-cmap w!! w !sudo tee % >/dev/null
-
 " GIT
 " set laststatus=2
 " set statusline=%<%f[%{GitBranch()}]\ %h%m%r%=%-14.(%l,%c%V%)\ %P
@@ -245,3 +243,10 @@ endfunction
 
 " For vim-gitgutters
 highlight clear SignColumn
+
+if has("unix")
+  set directory=~/.vim/swap
+  set backupdir=~/.vim/backup
+  set undodir=~/.vim/undo
+  set undofile
+endif
