@@ -216,15 +216,22 @@ set mouse=a
 " Support bracketed paste
 " http://stackoverflow.com/questions/5585129/pasting-code-into-terminal-window-into-vim-on-mac-os-x/7053522#7053522
 if &term =~ "xterm.*"
-    let &t_ti = &t_ti . "\e[?2004h"
-    let &t_te = "\e[?2004l" . &t_te
-    function XTermPasteBegin(ret)
-        set pastetoggle=<Esc>[201~
-        set paste
-        return a:ret
+    let &t_ti = "\<Esc>[?2004h" . &t_ti
+    let &t_te = "\<Esc>[?2004l" . &t_te
+
+    function! XTermPasteBegin(ret)
+      set pastetoggle=<Esc>[201~
+      set paste
+      return a:ret
     endfunction
-    map <expr> <Esc>[200~ XTermPasteBegin("i")
-    imap <expr> <Esc>[200~ XTermPasteBegin("")
+
+    execute "set <f28>=\<Esc>[200~"
+    execute "set <f29>=\<Esc>[201~"
+    map <expr> <f28> XTermPasteBegin("i")
+    imap <expr> <f28> XTermPasteBegin("")
+    vmap <expr> <f28> XTermPasteBegin("c")
+    cmap <f28> <nop>
+    cmap <f29> <nop>
 endif
 
 " A motion for the current match.
@@ -250,3 +257,8 @@ if has("unix")
   set undodir=~/.vim/undo
   set undofile
 endif
+
+" For vim-airline
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_c='%{fnamemodify(getcwd(), ":t")} %f%m'
