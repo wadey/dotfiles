@@ -40,6 +40,8 @@
   rebranch = !sh -c 'git branch $0 && git reset --hard HEAD^ && git checkout $0'
 
   purge-remote = !sh -c 'echo git branch -a | echo sed -n \"/master$/d;s?^ *remotes/$0/??p\"'
+  exec = "!exec "
+  root = rev-parse --show-toplevel
 [mergetool "mvimdiff"]
   cmd = mvimdiff \"$LOCAL\" \"$REMOTE\" \"$MERGED\" \"$BASE\"
 [mergetool "p4merge"]
