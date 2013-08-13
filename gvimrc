@@ -28,6 +28,6 @@ setlocal cul
 macmenu File.Open\ Tab\.\.\.<Tab>:tabnew key=<D-M-t>
 macmenu File.New\ Tab key=<D-S-t>
 macmenu File.Print key=<nop>
-nmap <D-t> :CommandT<CR>
+nmap <D-t> :CtrlP<CR>
 nmap <D-p> :CtrlP<CR>
 nmap <D-P> :CtrlPMRU<CR>
