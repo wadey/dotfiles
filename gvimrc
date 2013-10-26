@@ -3,7 +3,9 @@ hi User1 guifg=#90ff90 guibg=#333333 " Fugitive
 
 set transparency=1
 
-set guifont=Menlo:h12
+"set guifont=Menlo:h12
+"set guifont=Source\ Code\ Pro\ Semibold:h12
+set guifont=Source\ Code\ Pro:h12
 
 " GUI Option to remove the Toolbar (T)
 " set guioptions-=T

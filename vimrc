@@ -18,6 +18,8 @@ endif
 
 nnoremap / /\v
 vnoremap / /\v
+nnoremap Y y$
+nnoremap Q gq
 set ignorecase              "ignore case in searches
 set smartcase
 set gdefault
@@ -126,7 +128,7 @@ map <F12>   :wa!<CR>:make<CR>
 "imap <expr> <CR> pumvisible() ? "<C-Y>" : "<CR>"
 "inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-"let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "context"
 
 set verbose=0
 
@@ -180,6 +182,7 @@ if has("autocmd")
       \   nnoremap <buffer> .. :edit %:h<CR> |
       \ endif
 endif
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 
 " Removes trailing spaces
 command! TrimWhiteSpace %s/\v\s+$//
@@ -262,3 +265,24 @@ endif
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_c='%{fnamemodify(getcwd(), ":t")} %f%m'
+
+function! DeleteInactiveBufs()
+    "From tabpagebuflist() help, get a list of all buffers in all tabs
+    let tablist = []
+    for i in range(tabpagenr('$'))
+        call extend(tablist, tabpagebuflist(i + 1))
+    endfor
+
+    "Below originally inspired by Hara Krishna Dara and Keith Roberts
+    "http://tech.groups.yahoo.com/group/vim/message/56425
+    let nWipeouts = 0
+    for i in range(1, bufnr('$'))
+        if bufexists(i) && !getbufvar(i,"&mod") && index(tablist, i) == -1
+        "bufno exists AND isn't modified AND isn't in the list of buffers open in windows and tabs
+            silent exec 'bwipeout' i
+            let nWipeouts = nWipeouts + 1
+        endif
+    endfor
+    echomsg nWipeouts . ' buffer(s) wiped out'
+endfunction
+command! Bdi :call DeleteInactiveBufs()

@@ -31,3 +31,5 @@ done
 
 (cd $HOME/.vim && ./update)
 mkdir -p ~/.vimundo
+mkdir -p ~/.vim/swap
+mkdir -p ~/.vim/undo
