@@ -1,4 +1,6 @@
 /zsh.d/*_local
 /vim/bundle
 /vim/.netrwhist
+/vim/swap
+/vim/undo
 /backups
