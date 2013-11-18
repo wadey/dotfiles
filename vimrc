@@ -239,7 +239,7 @@ endif
 
 " A motion for the current match.
 " Lets you do "ci/" to change the current match
-" via http://stackoverflow.com/questions/8694250/vim-incremental-search-how-to-copy-the-the-matched-string-under-cursor/8694439#8694439
+" via http://stackoverflow.com/a/8697727/544243
 vnoremap <silent> i/ :<c-u>call SelectMatch()<cr>
 onoremap <silent> i/ :call SelectMatch()<cr>
 function! SelectMatch()
