@@ -1,0 +1,3 @@
+#!/bin/sh
+
+GIT_DIR=~/.dotfiles/.git git pull --ff-only
