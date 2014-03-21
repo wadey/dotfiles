@@ -37,6 +37,8 @@ Bundle 'marijnh/tern_for_vim'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'dgryski/vim-godef'
 Bundle 'PeterRincker/vim-argumentative'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'gcmt/wildfire.vim'
 
 Bundle 'Puppet-Syntax-Highlighting'
 Bundle 'JSON.vim'
