@@ -162,6 +162,7 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 " Don't count warnings as errors
 " let g:syntastic_quiet_warnings=1
 let g:syntastic_stl_format = '%E{[Err: %fe #%e]}'
+let g:syntastic_go_checkers = ['go', 'govet']
 
 au BufRead,BufNewFile *.thrift set filetype=thrift
 au BufRead,BufNewFile *.json set filetype=json
@@ -265,6 +266,8 @@ endif
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_c='%{fnamemodify(getcwd(), ":t")} %f%m'
+
+let g:gofmt_command = "goimports"
 
 function! DeleteInactiveBufs()
     "From tabpagebuflist() help, get a list of all buffers in all tabs
