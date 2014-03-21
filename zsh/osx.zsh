@@ -4,6 +4,9 @@ if [ $(uname) = 'Darwin' ]; then
         alias ls='gls --color=auto'
     fi
 
+    function java8() {
+        export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+    }
     function java7() {
         export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
     }
