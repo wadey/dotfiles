@@ -47,13 +47,6 @@ set wildignore+=*.o,*.obj,*.pyc,*.class,.git,node_modules,lib-cov
 let html_use_css=1          "use css in HTML output
 let use_xhtml=1             "use xhtml in HTML output
 
-"" miniBufferExplorer stuff
-let g:miniBufExplMapWindowNavVim = 1    "map <control> vim navigaiton keys
-let g:miniBufExplMapWindowNavArrows = 1 "map <control> arrow keys
-let g:miniBufExplMapCTabSwitchBufs = 1  "map <control> tab key
-let g:miniBufExplModSelTarget = 1       "because I use taglist as well
-"let g:miniBufExplForceSyntaxEnable = 1  "fix a bug with syntax in 6.3.1
-
 "" Folding
 set foldmethod=indent       "fold based on identation 
 set nofen                   "open all folds initially
@@ -78,12 +71,6 @@ map ;T :retab<CR>
 nnoremap j gj
 nnoremap k gk
 
-" Textmate like text movement
-nmap <C-Up> [e
-nmap <C-Down> ]e
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
 
@@ -95,30 +82,6 @@ map <F9>    :set wrap!<CR>
 map <F10>   :Tlist<CR>
 map <F11>   :wa!<CR>:!aspell -c --dont-backup "%"<CR>:e! "%"<CR><CR>
 map <F12>   :wa!<CR>:make<CR>
-
-"" smart tab completion
-" function! Smart_TabComplete()
-"   let line = getline('.')                         " curline
-"   let substr = strpart(line, -1, col('.'))      " from start to cursor
-"   let substr = matchstr(substr, "[^ \\t]*$")       " word till cursor
-"   if (strlen(substr)==0)                          " nothing to match on empty string
-"     return "\\<tab>"
-"   endif
-"   let has_period = match(substr, '\\.') != -1      " position of period, if any
-"   let has_slash = match(substr, '\\/') != -1       " position of slash, if any
-"   if (!has_period && !has_slash)
-"     return "\\<C-X>\\<C-P>"                         " existing text matching
-"   elseif ( has_slash )
-"     return "\\<C-X>\\<C-F>"                         " file matching
-"   else
-"     return "\\<C-X>\\<C-O>"                         " plugin matching
-"   endif
-" endfunction
-" :inoremap <Tab> <C-R>=Smart_TabComplete()<CR>
-
-" The <CR> key should select from completion menu without adding a newline
-"imap <expr> <CR> pumvisible() ? "<C-Y>" : "<CR>"
-"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 let g:SuperTabDefaultCompletionType = "context"
 
