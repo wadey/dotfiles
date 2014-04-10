@@ -12,6 +12,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-rsi'
 
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'wadey/vim-javascript'

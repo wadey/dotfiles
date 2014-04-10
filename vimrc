@@ -78,14 +78,6 @@ map ;T :retab<CR>
 nnoremap j gj
 nnoremap k gk
 
-"" GNU readline bindings
-map <C-A>   <Home>
-map <C-E>   <End>
-map <C-F>   <Right>
-map <C-B>   <Left>
-map <ESC>b  <S-Left>
-map <ESC>f <S-Right>
-
 " Textmate like text movement
 nmap <C-Up> [e
 nmap <C-Down> ]e
