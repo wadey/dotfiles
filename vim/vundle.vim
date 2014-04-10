@@ -24,7 +24,7 @@ command! -nargs=? CommandTRakeMake !sh -c 'cd ~/.vim/bundle/command-t && rake ma
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
     echo ""
-    :BundleInstall
+    :PluginInstall
     :CommandTRakeMake
 endif
 
