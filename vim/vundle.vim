@@ -19,13 +19,10 @@ call vundle#rc()
 
 source ~/.vim/bundles.vim
 
-command! -nargs=? CommandTRakeMake !sh -c 'cd ~/.vim/bundle/command-t && rake make'
-
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
     echo ""
     :PluginInstall
-    :CommandTRakeMake
 endif
 
 filetype plugin indent on     " required!
