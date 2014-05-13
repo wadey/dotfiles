@@ -1,0 +1,18 @@
+#!/bin/sh
+# Usage: randwords [count] [set size]
+
+ROOT="$(dirname "$(dirname "$0")")"
+
+NUM="${1:-4}"
+SET="${2:-5000}"
+
+SHUF="shuf"
+which gshuf >/dev/null 2>&1 && SHUF="gshuf"
+
+gunzip -c "$ROOT/lib/5000words.tsv.gz" |
+    tail -n +2 |
+    head -n "$SET" |
+    $SHUF --random-source=/dev/urandom |
+    head -n "$NUM" |
+    cut -f 2 |
+    paste -s -d ' ' -
