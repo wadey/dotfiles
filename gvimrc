@@ -1,5 +1,5 @@
-color twilight
-hi User1 guifg=#90ff90 guibg=#333333 " Fugitive
+"color jellybeans
+"hi User1 guifg=#90ff90 guibg=#333333 " Fugitive
 
 set transparency=1
 

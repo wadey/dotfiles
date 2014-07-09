@@ -35,9 +35,13 @@ set hidden                  "hide buffers instead of closing them
 set wrap
 set textwidth=0             "When wrapping is off, break lines at 78 chars
 set formatoptions=qrn1
+
+color jellybeans
+
 if exists("&colorcolumn")
-    set colorcolumn=80,81,82
+    set colorcolumn=80
     hi ColorColumn ctermbg=black guibg=grey10
+    "match ErrorMsg '\%>80v.\+'
 endif
 
 set wildmode=list:longest
@@ -150,8 +154,8 @@ command! -nargs=1 SaveasSamePath exe "saveas " . expand("%:p:h") . "/" . expand(
 if (&t_Co == 256 || &t_Co == 88) && !has('gui_running')
   " Use the guicolorscheme plugin to makes 256-color or 88-color
   " terminal use GUI colors rather than cterm colors.
-  runtime! bundle/guicolorscheme.vim/plugin/guicolorscheme.vim
-  GuiColorScheme twilight
+  "runtime! bundle/guicolorscheme.vim/plugin/guicolorscheme.vim
+  "GuiColorScheme twilight
 endif
 
 " ConqueTerm settings
@@ -221,8 +225,17 @@ endif
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_c='%{fnamemodify(getcwd(), ":t")} %f%m'
+" let g:airline#extensions#tabline#enabled = 1
 
 let g:gofmt_command = "goimports"
+
+" vim-go
+au FileType go nmap gd <Plug>(go-def)
+
+" ultisnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 function! DeleteInactiveBufs()
     "From tabpagebuflist() help, get a list of all buffers in all tabs
