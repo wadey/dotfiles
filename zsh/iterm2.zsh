@@ -18,7 +18,11 @@ if [[ -n "$ITERM_SESSION_ID" ]]; then
 
     function iterm2_preexec() {
         if [[ "$1" =~ "^ssh " ]]; then
-            tab-color 160 255 160
+            if [[ "$1" =~ "prod" ]]; then
+                tab-color 255 160 160
+            else
+                tab-color 160 255 160
+            fi
         else
             tab-color 160 160 255
         fi
