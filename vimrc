@@ -176,27 +176,6 @@ command! -range=% -nargs=* Json <line1>,<line2>!python -mjson.tool <args>
 " Support xterm mouse
 set mouse=a
 
-" Support bracketed paste
-" http://stackoverflow.com/questions/5585129/pasting-code-into-terminal-window-into-vim-on-mac-os-x/7053522#7053522
-if &term =~ "xterm.*"
-    let &t_ti = "\<Esc>[?2004h" . &t_ti
-    let &t_te = "\<Esc>[?2004l" . &t_te
-
-    function! XTermPasteBegin(ret)
-      set pastetoggle=<Esc>[201~
-      set paste
-      return a:ret
-    endfunction
-
-    execute "set <f28>=\<Esc>[200~"
-    execute "set <f29>=\<Esc>[201~"
-    map <expr> <f28> XTermPasteBegin("i")
-    imap <expr> <f28> XTermPasteBegin("")
-    vmap <expr> <f28> XTermPasteBegin("c")
-    cmap <f28> <nop>
-    cmap <f29> <nop>
-endif
-
 " A motion for the current match.
 " Lets you do "ci/" to change the current match
 " via http://stackoverflow.com/a/8697727/544243
@@ -230,7 +209,7 @@ let g:airline_section_c='%{fnamemodify(getcwd(), ":t")} %f%m'
 let g:gofmt_command = "goimports"
 
 " vim-go
-au FileType go nmap gd <Plug>(go-def)
+" au FileType go nmap gd <Plug>(go-def)
 
 " ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
