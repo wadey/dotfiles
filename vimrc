@@ -206,7 +206,7 @@ let g:airline_right_sep=''
 let g:airline_section_c='%{fnamemodify(getcwd(), ":t")} %f%m'
 " let g:airline#extensions#tabline#enabled = 1
 
-let g:gofmt_command = "goimports"
+let g:go_fmt_command = "goimports"
 
 " vim-go
 " au FileType go nmap gd <Plug>(go-def)
@@ -215,6 +215,13 @@ let g:gofmt_command = "goimports"
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+"" YouCompleteMe
+"let g:ycm_key_list_previous_completion=['<Up>']
+
+"" Ultisnips
+"let g:UltiSnipsExpandTrigger="<c-tab>"
+"let g:UltiSnipsListSnippets="<c-s-tab>"
 
 function! DeleteInactiveBufs()
     "From tabpagebuflist() help, get a list of all buffers in all tabs

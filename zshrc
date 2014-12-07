@@ -35,7 +35,7 @@ DISABLE_VENV_CD="1"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew osx mvn rbenv golang virtualenvwrapper autoenv knife rsync urltools screen)
+plugins=(git brew osx mvn golang virtualenvwrapper autoenv knife rsync urltools screen)
 
 ZSH_CUSTOM=~/.zsh
 
