@@ -20,7 +20,3 @@ git_prompt_help() {
 }
 
 source $ZSH_CUSTOM/git-prompt.sh
-
-if [[ -n "$commands[hub]" ]]; then
-    compdef '_dispatch git git' hub
-fi
