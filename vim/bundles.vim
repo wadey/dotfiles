@@ -1,4 +1,4 @@
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
@@ -25,7 +25,7 @@ Plugin 'bmatheny/vim-scala'
 Plugin 'mjwall/clj-vim'
 Plugin 'sprsquish/thrift.vim'
 Plugin 'uarun/vim-protobuf'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'sjl/vitality.vim'
 Plugin 'guns/vim-clojure-static'
 Plugin 'airblade/vim-gitgutter'
@@ -47,6 +47,12 @@ Plugin 'godlygeek/tabular'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'ConradIrwin/vim-bracketed-paste' " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
 Plugin 'Lokaltog/vim-easymotion'         " Makes it easier to do complicated motions
+Plugin 'wting/rust.vim'
+Plugin 'justinmk/vim-gtfo'
+Plugin 'janko-m/vim-test'
+
+Plugin 'junegunn/vim-easy-align'
+Plugin 'junegunn/vim-xmark'
 
 Plugin 'Puppet-Syntax-Highlighting'
 Plugin 'JSON.vim'
