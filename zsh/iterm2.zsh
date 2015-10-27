@@ -12,11 +12,11 @@ if [[ -n "$ITERM_SESSION_ID" ]]; then
     tab-blue() { tab-color 0 0 255 }
     tab-reset() { echo -ne "\033]6;1;bg;*;default\a" }
 
-    function iterm2_precmd() {
+    function iterm2_tab_precmd() {
         tab-reset
     }
 
-    function iterm2_preexec() {
+    function iterm2_tab_preexec() {
         if [[ "$1" =~ "^ssh " ]]; then
             if [[ "$1" =~ "prod" ]]; then
                 tab-color 255 160 160
@@ -29,6 +29,6 @@ if [[ -n "$ITERM_SESSION_ID" ]]; then
     }
 
     autoload -U add-zsh-hook
-    add-zsh-hook precmd  iterm2_precmd
-    add-zsh-hook preexec iterm2_preexec
+    add-zsh-hook precmd  iterm2_tab_precmd
+    add-zsh-hook preexec iterm2_tab_preexec
 fi
