@@ -42,6 +42,10 @@
   purge-remote = !sh -c 'echo git branch -a | echo sed -n \"/master$/d;s?^ *remotes/$0/??p\"'
   exec = "!exec "
   root = rev-parse --show-toplevel
+
+  # diff-highlight
+  diffh = !sh -c 'git diff --color | diff-highlight'
+  diffhf = !sh -c 'git diff --color | diff-highlight | diff-so-fancy'
 [mergetool "mvimdiff"]
   cmd = mvimdiff \"$LOCAL\" \"$REMOTE\" \"$MERGED\" \"$BASE\"
 [mergetool "p4merge"]
