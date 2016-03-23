@@ -1,5 +1,5 @@
 # iTerm2 tab color commands
-# http://code.google.com/p/iterm2/wiki/ProprietaryEscapeCodes
+# https://iterm2.com/documentation-escape-codes.html
 
 if [[ -n "$ITERM_SESSION_ID" ]]; then
     tab-color() {
