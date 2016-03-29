@@ -5,7 +5,11 @@ set transparency=1
 
 "set guifont=Menlo:h12
 "set guifont=Source\ Code\ Pro\ Semibold:h12
-set guifont=Source\ Code\ Pro:h12
+"set guifont=Source\ Code\ Pro:h12
+"set guifont=Fira\ Code:h12
+set guifont=Hasklig:h12
+
+set macligatures
 
 " GUI Option to remove the Toolbar (T)
 " set guioptions-=T
