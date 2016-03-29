@@ -47,6 +47,12 @@ endif
 set wildmode=list:longest
 set wildignore+=*.o,*.obj,*.pyc,*.class,.git,node_modules,lib-cov
 
+" use unicode in listchars
+" https://github.com/tpope/vim-sensible/pull/58/files
+if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
+    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+endif
+
 "" TOhtml stuff
 let html_use_css=1          "use css in HTML output
 let use_xhtml=1             "use xhtml in HTML output
