@@ -58,4 +58,4 @@
 [push]
   default = current
 [core]
-  excludesfile = /Users/wade/.gitignore
+  excludesfile = $HOME/.gitignore
