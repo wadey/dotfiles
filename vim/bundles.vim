@@ -62,3 +62,6 @@ Plugin 'justincampbell/vim-eighties' " Automatically resizes your windows
 Plugin 'justinmk/vim-gtfo'
 Plugin 'gcmt/wildfire.vim'
 Plugin 'kylef/apiblueprint.vim'
+Plugin 'Shougo/vimproc.vim' " https://github.com/fatih/vim-go/pull/670
+Plugin 'JamshedVesuna/vim-markdown-preview' " A light Vim plugin for previewing markdown files in a browser.
+Plugin 'jreybert/vimagit' " From a very single vim buffer, you can perform all basic git operations.
