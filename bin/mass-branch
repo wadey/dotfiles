@@ -1,0 +1,2 @@
+#!/bin/sh
+mass sh -c '[ -d .git ] && git rev-parse --abbrev-ref HEAD | grep -v "^master$"'

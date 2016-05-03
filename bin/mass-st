@@ -1,0 +1,2 @@
+#!/bin/sh
+mass sh -c '[ -d .git ] && git status --porcelain | grep -v "??"'
