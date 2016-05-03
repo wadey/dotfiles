@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -z "$@" ]; then
+    mvim --remote-send ":tabnew<cr>:lcd $PWD<cr>"
+else
+    mvim --remote-tab "$@"
+fi
+open -a "MacVim"
