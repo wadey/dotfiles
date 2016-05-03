@@ -14,7 +14,7 @@ if [ $(uname) = 'Darwin' ]; then
         export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
     }
 
-    java6
+    java8
 
     if [[ -n "$commands[brew]" ]]; then
         if [[ -n "$commands[groovy]" ]]; then
