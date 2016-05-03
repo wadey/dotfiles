@@ -59,3 +59,8 @@
   default = current
 [core]
   excludesfile = $HOME/.gitignore
+  # New in Git 2.8.0
+  # https://git-scm.com/docs/git-update-index#_untracked_cache
+  # Test with:
+  #   git update-index --test-untracked-cache
+  untrackedCache = true
