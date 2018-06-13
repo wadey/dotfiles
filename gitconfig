@@ -39,9 +39,14 @@
   # move the last commit to a new branch
   rebranch = !sh -c 'git branch $0 && git reset --hard HEAD^ && git checkout $0'
 
+  # update commit timestamp on last commit
+  update-timestamp = commit --amend --reset-author --no-edit
+
   purge-remote = !sh -c 'echo git branch -a | echo sed -n \"/master$/d;s?^ *remotes/$0/??p\"'
   exec = "!exec "
   root = rev-parse --show-toplevel
+
+  current-branch = rev-parse --abbrev-ref HEAD
 
   # diff-highlight
   diffh = !sh -c 'git diff --color | diff-highlight'
@@ -55,6 +60,7 @@
   keepBackup = false
 [merge]
   tool = p4merge
+	conflictstyle = diff3
 [push]
   default = current
 [core]
@@ -64,3 +70,12 @@
   # Test with:
   #   git update-index --test-untracked-cache
   untrackedCache = true
+[diff]
+  compactionHeuristic = true
+  renameLimit = 1000
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[interactive]
+	diffFilter = diff-highlight
