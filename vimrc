@@ -127,7 +127,6 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 " Don't count warnings as errors
 " let g:syntastic_quiet_warnings=1
 let g:syntastic_stl_format = '%E{[Err: %fe #%e]}'
-let g:syntastic_go_checkers = ['go', 'govet']
 
 au BufRead,BufNewFile *.thrift set filetype=thrift
 au BufRead,BufNewFile *.json set filetype=json
@@ -212,7 +211,8 @@ let g:airline_right_sep=''
 let g:airline_section_c='%{fnamemodify(getcwd(), ":t")} %f%m'
 " let g:airline#extensions#tabline#enabled = 1
 
-let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['govet', 'errcheck']
+" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " vim-go
 " au FileType go nmap gd <Plug>(go-def)
