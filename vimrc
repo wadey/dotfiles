@@ -35,6 +35,9 @@ set hidden                  "hide buffers instead of closing them
 set wrap
 set textwidth=0             "When wrapping is off, break lines at 78 chars
 set formatoptions=qrn1
+if exists("&breakindent")
+    set breakindent
+endif
 
 color jellybeans
 
