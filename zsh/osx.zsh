@@ -17,6 +17,7 @@ if [ $(uname) = 'Darwin' ]; then
     java8
 
     if [[ -n "$commands[brew]" ]]; then
+        path=($path /usr/local/sbin)
         if [[ -n "$commands[groovy]" ]]; then
             export GROOVY_HOME="$(brew --prefix groovy)/libexec"
         fi
