@@ -16,7 +16,7 @@ Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-dispatch'
 
-Plugin 'tsaleh/vim-supertab'             " Do all your insert-mode completion with Tab.
+" Plugin 'tsaleh/vim-supertab'             " Do all your insert-mode completion with Tab.
 Plugin 'int3/vim-taglist-plus'           " Unmaintained -- You should probably use TagBar.
 Plugin 'mileszs/ack.vim'                 " Vim plugin for the Perl module / CLI script 'ack'
 Plugin 'scrooloose/syntastic'            " Syntax checking hacks for vim 
@@ -80,6 +80,7 @@ Plugin 'mhinz/vim-signify' " Enabled Only for `hg`
 Plugin 'mattboehm/vim-unstack' " Vim plugin for parsing stack traces and opening the files
 Plugin 'michaeljsmith/vim-indent-object' " Vim plugin that defines a new text object representing lines of code at the same indent level. Useful for python/vim scripts, etc.
 Plugin 'rodjek/vim-puppet' " Puppet niceties for your Vim setup
+Plugin 'ervandew/supertab'
 
 " Neovim
 Plugin 'benekastah/neomake'
