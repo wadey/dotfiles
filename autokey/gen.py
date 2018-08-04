@@ -1,10 +1,12 @@
+import unicodedata
 import json
 import re
 
 import yaml
 
 def replchar(matchobj):
-    return hex(ord(matchobj.group(0)))
+    s = unicode(matchobj.group(0), 'utf-8')
+    return unicodedata.name(s).lower().replace(' ', '-')
 
 def keystr_to_name(keystr):
     s = re.sub(r'[<>]', '', keystr)
