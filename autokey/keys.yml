@@ -1,0 +1,46 @@
+# https://github.com/autokey/autokey/wiki/Special-Keys
+---
+<super>+a:
+    <ctrl>+a
+<super>+c:
+    gvim.Gvim: <ctrl>+<insert>
+    gnome-terminal-server.Gnome-terminal: <ctrl>+<shift>+c
+    default: <ctrl>+c
+<super>+f:
+    <ctrl>+f
+<super>+g:
+    <ctrl>+g
+<super>+l:
+    <ctrl>+l
+<super>+t:
+    <ctrl>+t
+<shift>+<super>+t:
+    gvim.Gvim: <ctrl>+<alt>+p
+    default: <ctrl>+<shift>+t
+<super>+v:
+    gvim.Gvim: <shift>+<insert>
+    gnome-terminal-server.Gnome-terminal: <ctrl>+<shift>+v
+    default: <ctrl>+v
+<super>+w:
+    <ctrl>+w
+<super>+x:
+    gvim.Gvim: <shift>+<delete>
+    default: <ctrl>+x
+<super>+y:
+    google-chrome.Google-chrome: <ctrl>+h
+    default: <ctrl>+y
+
+<super>+`:
+    <shift>+<super>+`
+<shift>+<super>+[:
+    <ctrl>+<page_up>
+<shift>+<super>+]:
+    <ctrl>+<page_down>
+<super>+<left>:
+    <home>
+<shift>+<super>+<left>:
+    <shift>+<home>
+<super>+<right>:
+    <end>
+<shift>+<super>+<right>:
+    <shift>+<end>
