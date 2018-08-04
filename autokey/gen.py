@@ -12,12 +12,14 @@ def keystr_to_name(keystr):
     s = re.sub(r'[^-A-Za-z0-9]', replchar, s)
     return s
 
-def default_json():
+def autokey_json(name, keystr):
+    modifiers = k.split('+')
+    hotkey = modifiers.pop()
     return {
         "usageCount": 0,
         "omitTrigger": False,
         "prompt": False,
-        # "description": "",
+        "description": name,
         "abbreviation": {
             "wordChars": "[\\w]",
             "abbreviations": [],
@@ -26,15 +28,11 @@ def default_json():
             "backspace": True,
             "triggerInside": False
         },
-        # "hotkey": {
-        #     "hotKey": "",
-        #     "modifiers": [
-        #         "<super>"
-        #     ]
-        # },
-        "modes": [
-            3
-        ],
+        "hotkey": {
+            "hotKey": hotkey,
+            "modifiers": modifiers
+        },
+        "modes": [3],
         "showInTrayMenu": False,
         "filter": {
             "regex": None,
@@ -48,16 +46,10 @@ if __name__ == '__main__':
     config_data = yaml.load(open('keys.yml'))
 
     for k, v in config_data.items():
-        modifiers = k.split('+')
-        hotkey = modifiers.pop()
         name = keystr_to_name(k)
-        j = default_json()
-        j["description"] = name
-        j["hotkey"] = {
-                "hotKey": hotkey,
-                "modifiers": modifiers,
-        }
+
         with open('gen/.%s.json' % name, 'w') as f:
+            j = autokey_json(name, k)
             f.write(json.dumps(j, indent=4))
             f.write("\n")
 
