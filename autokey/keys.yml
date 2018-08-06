@@ -7,9 +7,11 @@
     gnome-terminal-server.Gnome-terminal: <ctrl>+<shift>+c
     default: <ctrl>+c
 <super>+f:
-    <ctrl>+f
+    gnome-terminal-server.Gnome-terminal: <ctrl>+<shift>+f
+    default: <ctrl>+f
 <super>+g:
-    <ctrl>+g
+    gnome-terminal-server.Gnome-terminal: <ctrl>+<shift>+g
+    default: <ctrl>+g
 <super>+l:
     <ctrl>+l
 <super>+t:
