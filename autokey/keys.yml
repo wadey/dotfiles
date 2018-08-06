@@ -32,6 +32,13 @@
     google-chrome.Google-chrome: <ctrl>+h
     default: <ctrl>+y
 
+<super>+0:
+    <ctrl>+0
+<super>+-:
+    <ctrl>+-
+<super>+=:
+    <ctrl>+<shift>+=
+
 <super>+`:
     <shift>+<super>+<tab>
 <shift>+<super>+[:
