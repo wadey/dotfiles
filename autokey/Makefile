@@ -11,5 +11,11 @@ env:
 	virtualenv env
 	./env/bin/pip install PyYAML
 
+dump-gnome:
+	dconf dump /org/gnome/desktop/wm/keybindings/ >org.gnome.desktop.wm.keybindings.conf
+
+load-gnome:
+	dconf dump /org/gnome/desktop/wm/keybindings/ <org.gnome.desktop.wm.keybindings.conf
+
 .FORCE:
-.PHONY: kill
+.PHONY: kill dump-gnome load-gnome
