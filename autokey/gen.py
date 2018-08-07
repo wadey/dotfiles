@@ -12,6 +12,8 @@ def keystr_to_name(keystr):
     s = re.sub(r'[<>]', '', keystr)
     s = re.sub(r'[+]', '-', s)
     s = re.sub(r'[^-A-Za-z0-9]', replchar, s)
+    # TODO
+    s = re.sub(r'[-]$', replchar, s)
     return s
 
 def autokey_json(name, keystr):
