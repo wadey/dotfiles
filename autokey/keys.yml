@@ -14,8 +14,16 @@
     default: <ctrl>+g
 <super>+l:
     <ctrl>+l
+<super>+n:
+    gnome-terminal-server.Gnome-terminal: <super>+n
+    default: <ctrl>+n
+<shift>+<super>+n:
+    <shift>+<ctrl>+n
+<super>+r:
+    default: <ctrl>+r
 <super>+t:
-    <ctrl>+t
+    gnome-terminal-server.Gnome-terminal: <super>+t
+    default: <ctrl>+t
 <shift>+<super>+t:
     gvim.Gvim: <ctrl>+<alt>+p
     default: <ctrl>+<shift>+t
@@ -39,8 +47,15 @@
 <super>+=:
     <ctrl>+<shift>+=
 
-<super>+`:
-    <shift>+<super>+<tab>
+<alt>+;:
+    <ctrl>+<shift>+u2026<enter>
+<alt>+2:
+    <ctrl>+<shift>+u2122<enter>
+<alt>+8:
+    <ctrl>+<shift>+u2022<enter>
+
+<super>+\:
+    <ctrl>+<shift>+x
 <shift>+<super>+[:
     <ctrl>+<page_up>
 <shift>+<super>+]:
