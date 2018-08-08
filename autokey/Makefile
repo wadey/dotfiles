@@ -15,7 +15,7 @@ dump-gnome:
 	dconf dump /org/gnome/desktop/wm/keybindings/ >org.gnome.desktop.wm.keybindings.conf
 
 load-gnome:
-	dconf dump /org/gnome/desktop/wm/keybindings/ <org.gnome.desktop.wm.keybindings.conf
+	dconf load /org/gnome/desktop/wm/keybindings/ <org.gnome.desktop.wm.keybindings.conf
 
 .FORCE:
 .PHONY: kill dump-gnome load-gnome
