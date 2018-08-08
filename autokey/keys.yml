@@ -23,6 +23,7 @@
     default: <ctrl>+r
 <super>+t:
     gnome-terminal-server.Gnome-terminal: <super>+t
+    gvim.Gvim: <ctrl>+p
     default: <ctrl>+t
 <shift>+<super>+t:
     gvim.Gvim: <ctrl>+<alt>+p
