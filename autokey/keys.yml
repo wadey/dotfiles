@@ -39,6 +39,7 @@
     default: <ctrl>+x
 <super>+y:
     google-chrome.Google-chrome: <ctrl>+h
+    chromium-browser.Chromium-browser: <ctrl>+h
     default: <ctrl>+y
 
 <super>+0:
