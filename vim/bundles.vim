@@ -55,6 +55,8 @@ Plugin 'wting/rust.vim'
 Plugin 'JSON.vim'
 Plugin 'uarun/vim-protobuf'
 Plugin 'JamshedVesuna/vim-markdown-preview' " A light Vim plugin for previewing markdown files in a browser.
+Plugin 'pearofducks/ansible-vim'
+Plugin 'hashivim/vim-terraform'
 
 " Trial
 Plugin 'SirVer/ultisnips'
@@ -81,6 +83,8 @@ Plugin 'mattboehm/vim-unstack' " Vim plugin for parsing stack traces and opening
 Plugin 'michaeljsmith/vim-indent-object' " Vim plugin that defines a new text object representing lines of code at the same indent level. Useful for python/vim scripts, etc.
 Plugin 'rodjek/vim-puppet' " Puppet niceties for your Vim setup
 Plugin 'ervandew/supertab'
+Plugin 'thinca/vim-fontzoom'
+Plugin 'shumphrey/fugitive-gitlab.vim'
 
 " Neovim
 Plugin 'benekastah/neomake'
