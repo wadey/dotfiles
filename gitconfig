@@ -37,7 +37,7 @@
   sdcommit = !git stash && git svn dcommit && git stash pop
 
   # move the last commit to a new branch
-  rebranch = !sh -c 'git branch $0 && git reset --hard HEAD^ && git checkout $0'
+  rebranch = !sh -c 'git stash && git branch $0 && git reset --hard HEAD^ && git checkout $0'
 
   # update commit timestamp on last commit
   update-timestamp = commit --amend --reset-author --no-edit
@@ -47,6 +47,8 @@
   root = rev-parse --show-toplevel
 
   current-branch = rev-parse --abbrev-ref HEAD
+  recent-branches = branch --sort=-committerdate
+  co-recent = !git branch --sort=-committerdate | fzf +s | xargs -r git checkout
 
   # diff-highlight
   diffh = !sh -c 'git diff --color | diff-highlight'

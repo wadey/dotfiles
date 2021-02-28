@@ -20,3 +20,5 @@ git_prompt_help() {
 }
 
 source $ZSH_CUSTOM/git-prompt.sh
+
+alias cd-git-root='cd $(git rev-parse --show-toplevel)'
