@@ -38,7 +38,7 @@ if has("gui_macvim")
     nmap <D-p> :CtrlP<CR>
     nmap <D-P> :CtrlPMRU<CR>
 else
-    set guifont=Source\ Code\ Pro\ 12
+    set guifont=Source\ Code\ Variable\ 12
 
     if has("clipboard")
         " CTRL-X and SHIFT-Del are Cut

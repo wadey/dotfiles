@@ -12,12 +12,16 @@ env:
 	./env/bin/pip install PyYAML
 
 dump-gnome:
+	dconf dump /org/gnome/desktop/peripherals/mouse/ >org.gnome.desktop.peripherals.mouse.conf
+	dconf dump /org/gnome/desktop/input-sources/ >org.gnome.desktop.input-sources.conf
 	dconf dump /org/gnome/desktop/wm/keybindings/ >org.gnome.desktop.wm.keybindings.conf
 	dconf dump /org/gnome/mutter/ >org.gnome.mutter.conf
 	dconf dump /org/gnome/shell/keybindings/ >org.gnome.shell.keybindings.conf
 	dconf dump /org/gnome/terminal/legacy/keybindings/ >org.gnome.terminal.legacy.keybindings.conf
 
 load-gnome:
+	dconf load /org/gnome/desktop/peripherals/mouse/ <org.gnome.desktop.peripherals.mouse.conf
+	dconf load /org/gnome/desktop/input-sources/ <org.gnome.desktop.input-sources.conf
 	dconf load /org/gnome/desktop/wm/keybindings/ <org.gnome.desktop.wm.keybindings.conf
 	dconf load /org/gnome/mutter/ <org.gnome.mutter.conf
 	dconf load /org/gnome/shell/keybindings/ <org.gnome.shell.keybindings.conf

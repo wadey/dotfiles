@@ -53,6 +53,9 @@
   # diff-highlight
   diffh = !sh -c 'git diff --color | diff-highlight'
   diffhf = !sh -c 'git diff --color | diff-highlight | diff-so-fancy'
+
+  gone = ! "git fetch --all -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}'"
+  gone-rm = ! "git fetch --all -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
 [mergetool "mvimdiff"]
   cmd = mvimdiff \"$LOCAL\" \"$REMOTE\" \"$MERGED\" \"$BASE\"
 [mergetool "p4merge"]

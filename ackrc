@@ -5,6 +5,7 @@
 --follow
 --group
 
+--ignore-directory=is:env
 --ignore-directory=is:node_modules
 --ignore-directory=is:target
 --ignore-directory=is:.node-gyp

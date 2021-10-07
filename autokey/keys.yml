@@ -3,6 +3,7 @@
 <super>+a:
     <ctrl>+a
 <super>+c:
+    Focus-Proxy-Window.FocusProxy: <super>+c
     gvim.Gvim: <ctrl>+<insert>
     gnome-terminal-server.Gnome-terminal: <ctrl>+<shift>+c
     default: <ctrl>+c
@@ -12,6 +13,12 @@
 <super>+g:
     gnome-terminal-server.Gnome-terminal: <ctrl>+<shift>+g
     default: <ctrl>+g
+<shift>+<super>+g:
+    gnome-terminal-server.Gnome-terminal: <ctrl>+<shift>+h
+    default: <ctrl>+<shift>+g
+<super>+k:
+    gnome-terminal-server.Gnome-terminal: <super>+k
+    default: <ctrl>+k
 <super>+l:
     <ctrl>+l
 <super>+n:
@@ -29,6 +36,7 @@
     gvim.Gvim: <ctrl>+<alt>+p
     default: <ctrl>+<shift>+t
 <super>+v:
+    Focus-Proxy-Window.FocusProxy: <super>+v
     gvim.Gvim: <shift>+<insert>
     gnome-terminal-server.Gnome-terminal: <ctrl>+<shift>+v
     default: <ctrl>+v
@@ -39,6 +47,7 @@
     default: <ctrl>+x
 <super>+y:
     google-chrome.Google-chrome: <ctrl>+h
+    google-chrome-beta.Google-chrome-beta: <ctrl>+h
     chromium-browser.Chromium-browser: <ctrl>+h
     default: <ctrl>+y
 
@@ -49,19 +58,39 @@
 <super>+=:
     <ctrl>+<shift>+=
 
+# https://en.wikipedia.org/wiki/Option_key
+# https://www.webnots.com/option-or-alt-key-shortcuts-to-insert-symbols-in-mac-os-x/
+<alt>+v:
+    <ctrl>+<shift>+u221a<enter>
 <alt>+;:
     <ctrl>+<shift>+u2026<enter>
 <alt>+2:
     <ctrl>+<shift>+u2122<enter>
+<alt>+5:
+    <ctrl>+<shift>+u221e<enter>
 <alt>+8:
     <ctrl>+<shift>+u2022<enter>
+<alt>+0:
+    <ctrl>+<shift>+u00b0<enter>
+<alt>+-:
+    <ctrl>+<shift>+u2013<enter>
+<shift>+<alt>+-:
+    <ctrl>+<shift>+u2014<enter>
+<alt>+l:
+    <ctrl>+<shift>+u00ac<enter>
+<alt>+r:
+    <ctrl>+<shift>+u00ae<enter>
+<alt>+g:
+    <ctrl>+<shift>+u00a9<enter>
 
 <super>+\:
     <ctrl>+<shift>+x
 <shift>+<super>+[:
-    <ctrl>+<page_up>
+    Focus-Proxy-Window.FocusProxy: <alt>+<left>
+    default: <ctrl>+<page_up>
 <shift>+<super>+]:
-    <ctrl>+<page_down>
+    Focus-Proxy-Window.FocusProxy: <alt>+<right>
+    default: <ctrl>+<page_down>
 <super>+<left>:
     <home>
 <shift>+<super>+<left>:
