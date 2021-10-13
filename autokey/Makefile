@@ -18,6 +18,7 @@ dump-gnome:
 	dconf dump /org/gnome/mutter/ >org.gnome.mutter.conf
 	dconf dump /org/gnome/shell/keybindings/ >org.gnome.shell.keybindings.conf
 	dconf dump /org/gnome/terminal/legacy/keybindings/ >org.gnome.terminal.legacy.keybindings.conf
+	dconf dump /org/gnome/terminal/legacy/profiles:/ >org.gnome.terminal.legacy.profiles.dconf
 
 load-gnome:
 	dconf load /org/gnome/desktop/peripherals/mouse/ <org.gnome.desktop.peripherals.mouse.conf
@@ -26,6 +27,7 @@ load-gnome:
 	dconf load /org/gnome/mutter/ <org.gnome.mutter.conf
 	dconf load /org/gnome/shell/keybindings/ <org.gnome.shell.keybindings.conf
 	dconf load /org/gnome/terminal/legacy/keybindings/ <org.gnome.terminal.legacy.keybindings.conf
+	dconf load /org/gnome/terminal/legacy/profiles:/ <org.gnome.terminal.legacy.profiles.dconf
 
 .FORCE:
 .PHONY: kill dump-gnome load-gnome
