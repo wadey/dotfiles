@@ -7,9 +7,13 @@
 [color]
   ui = true
 [alias]
+  m = for-each-ref --format '%(refname:short)' --sort='refname' --count=1 'refs/heads/main' 'refs/heads/master'
   st = status -sb
   ci = commit
   co = checkout
+  com = !git checkout $(git m)
+  mom = !git merge origin/$(git m)
+  fomo = !git fetch origin && git merge origin/"$(git m)"
   br = branch
   cp = cherry-pick
   up = pull --rebase
@@ -49,6 +53,7 @@
   current-branch = rev-parse --abbrev-ref HEAD
   recent-branches = branch --sort=-committerdate
   co-recent = !git branch --sort=-committerdate | fzf +s | xargs -r git checkout
+  describe-branch = !echo $(git describe)-$(git branch --show-current)
 
   # diff-highlight
   diffh = !sh -c 'git diff --color | diff-highlight'

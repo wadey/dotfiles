@@ -5,7 +5,7 @@ import re
 import yaml
 
 def replchar(matchobj):
-    s = unicode(matchobj.group(0), 'utf-8')
+    s = matchobj.group(0)
     return unicodedata.name(s).lower().replace(' ', '-')
 
 def keystr_to_name(keystr):
@@ -49,7 +49,7 @@ def autokey_json(name, keystr):
 if __name__ == '__main__':
     config_data = yaml.load(open('keys.yml'))
 
-    for k, v in config_data.items():
+    for k, v in list(config_data.items()):
         name = keystr_to_name(k)
 
         with open('gen/.%s.json' % name, 'w') as f:
@@ -58,7 +58,7 @@ if __name__ == '__main__':
             f.write("\n")
 
         with open('gen/%s.py' % name, 'w') as f:
-            if isinstance(v, basestring):
+            if isinstance(v, str):
                 v = {"default": v}
             default = v["default"]
             del v["default"]
@@ -66,7 +66,7 @@ if __name__ == '__main__':
                 f.write("keyboard.send_keys('%s')\n" % default)
             else:
                 first = True
-                for app, key in v.items():
+                for app, key in list(v.items()):
                     if first:
                         f.write("if ")
                         first = False
