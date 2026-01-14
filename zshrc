@@ -1,3 +1,5 @@
+zmodload zsh/zprof
+
 if [[ -o login && -d ~/.dotfiles/.git ]]; then
     autoload -U colors && colors
     echo -n " $fg[green]∵$reset_color "
@@ -31,11 +33,12 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_UPDATE="true"
 
 DISABLE_VENV_CD="1"
+ZSH_DISABLE_COMPFIX="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew osx mvn golang virtualenvwrapper knife rsync urltools screen bgnotify)
+plugins=(git brew osx mvn golang rsync urltools screen bgnotify)
 
 ZSH_CUSTOM=~/.zsh
 
@@ -48,3 +51,4 @@ if [[ -f "$HOME/.zshlocal" ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+zprof
