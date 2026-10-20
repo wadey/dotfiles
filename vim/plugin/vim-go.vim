@@ -20,10 +20,6 @@ let g:go_highlight_format_strings = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
 
-" Outdated
-" let g:go_highlight_methods = 1
-" let g:go_highlight_structs = 1
-
 let g:go_auto_sameids = 1
 
 let g:go_auto_type_info = 1
