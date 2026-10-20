@@ -63,7 +63,7 @@ Plug 'gcmt/wildfire.vim'
 Plug 'kylef/apiblueprint.vim'
 Plug 'jreybert/vimagit' " From a very single vim buffer, you can perform all basic git operations.
 Plug 'vito-c/jq.vim' " Syntax highlighting for jq files in vim/neovim
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/SQLUtilities'
 Plug 'tpope/vim-abolish'
