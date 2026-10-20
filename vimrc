@@ -84,7 +84,7 @@ let g:SuperTabDefaultCompletionType = "context"
 set verbose=0
 
 set list
-nmap <silent> <leader>s :set nolist!<CR>
+nmap <silent> <leader>s :set list!<CR>
 nmap <silent> <leader>n :silent :nohlsearch<CR>
 nmap . .`[
 
