@@ -171,9 +171,6 @@ let g:airline_right_sep=''
 let g:airline_section_c='%{fnamemodify(getcwd(), ":t")} %f%m'
 " let g:airline#extensions#tabline#enabled = 1
 
-let g:syntastic_go_checkers = ['govet', 'errcheck']
-" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-
 " vim-go
 " au FileType go nmap gd <Plug>(go-def)
 
