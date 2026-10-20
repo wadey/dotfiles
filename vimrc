@@ -123,7 +123,7 @@ command! -nargs=* -complete=file Node terminal node <args>
 command! -nargs=* -complete=file Python terminal python3 <args>
 
 " use python json to Tidy a file
-command! -range=% -nargs=* Json <line1>,<line2>!python -mjson.tool <args>
+command! -range=% -nargs=* Json <line1>,<line2>!python3 -m json.tool <args>
 
 " Support xterm mouse
 set mouse=a
