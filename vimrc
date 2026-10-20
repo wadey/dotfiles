@@ -146,9 +146,9 @@ endfunction
 highlight clear SignColumn
 
 if has("unix")
-  set directory=~/.vim/swap
-  set backupdir=~/.vim/backup
-  set undodir=~/.vim/undo
+  set directory=~/.vim/swap//
+  set backupdir=~/.vim/backup//
+  set undodir=~/.vim/undo//
   set undofile
 endif
 
