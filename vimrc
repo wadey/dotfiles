@@ -89,7 +89,6 @@ nmap <silent> <leader>n :silent :nohlsearch<CR>
 nmap . .`[
 
 au BufRead,BufNewFile *.thrift set filetype=thrift
-au BufRead,BufNewFile *.json set filetype=json
 
 if has("autocmd")
     autocmd Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
