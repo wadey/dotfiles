@@ -115,13 +115,6 @@ command! TrimWhiteSpace %s/\v\s+$//
 " via http://vim.1045645.n5.nabble.com/How-to-make-saveas-default-to-original-file-s-directory-td2827361.html
 command! -nargs=1 SaveasSamePath exe "saveas " . expand("%:p:h") . "/" . expand("<args>")
 
-if (&t_Co == 256 || &t_Co == 88) && !has('gui_running')
-  " Use the guicolorscheme plugin to makes 256-color or 88-color
-  " terminal use GUI colors rather than cterm colors.
-  "runtime! bundle/guicolorscheme.vim/plugin/guicolorscheme.vim
-  "GuiColorScheme twilight
-endif
-
 " ConqueTerm settings
 let g:ConqueTerm_ReadUnfocused = 1
 let g:ConqueTerm_InsertOnEnter = 1
