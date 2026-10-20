@@ -88,10 +88,11 @@ nmap <silent> <leader>s :set list!<CR>
 nmap <silent> <leader>n :silent :nohlsearch<CR>
 nmap . .`[
 
-au BufRead,BufNewFile *.thrift set filetype=thrift
+augroup vimrc_autocmds
+    autocmd!
+    autocmd BufRead,BufNewFile *.thrift set filetype=thrift
 
-if has("autocmd")
-    autocmd Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
+    autocmd FileType qf setlocal colorcolumn=0 nolist nocursorline nowrap
 
     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -105,7 +106,7 @@ if has("autocmd")
       \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
       \   nnoremap <buffer> .. :edit %:h<CR> |
       \ endif
-endif
+augroup END
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 
 " Removes trailing spaces
