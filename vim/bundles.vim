@@ -81,6 +81,3 @@ Plugin 'thinca/vim-fontzoom'
 Plugin 'shumphrey/fugitive-gitlab.vim'
 Plugin 'dense-analysis/ale'
 Plugin 'robbles/logstash.vim'
-
-" Neovim
-Plugin 'benekastah/neomake'
