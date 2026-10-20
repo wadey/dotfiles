@@ -26,6 +26,5 @@ for FILE in $SH_FILES; do
 done
 
 (cd $HOME/.vim && ./update)
-mkdir -p ~/.vimundo
 mkdir -p ~/.vim/swap
 mkdir -p ~/.vim/undo
