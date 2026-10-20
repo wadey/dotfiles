@@ -74,7 +74,6 @@ nmap gV `[v`]
 
 "" F key toggles
 map <F7>    :set relativenumber!<CR>
-map <F8>    :set paste!<CR>
 map <F9>    :set wrap!<CR>
 
 map <F10>   :Tlist<CR>
