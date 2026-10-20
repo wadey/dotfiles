@@ -31,7 +31,6 @@ Plugin 'PeterRincker/vim-argumentative'
 Plugin 'godlygeek/tabular'
 Plugin 'easymotion/vim-easymotion'       " Makes it easier to do complicated motions
 Plugin 'junegunn/vim-easy-align'
-Plugin 'IndexedSearch'
 Plugin 'wadey/taboo.vim'
 
 Plugin 'nanotech/jellybeans.vim'
