@@ -12,9 +12,6 @@ set shiftwidth=4            "tab = 4 spaces
 set expandtab               "turn tabs in spaces
 
 set number
-if exists("&relativenumber")
-    set norelativenumber
-endif
 
 nnoremap / /\v
 vnoremap / /\v
