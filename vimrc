@@ -35,11 +35,8 @@ set breakindent
 
 color jellybeans
 
-if exists("&colorcolumn")
-    set colorcolumn=80
-    hi ColorColumn ctermbg=black guibg=grey10
-    "match ErrorMsg '\%>80v.\+'
-endif
+set colorcolumn=80
+hi ColorColumn ctermbg=black guibg=grey10
 
 set wildmode=list:longest
 set wildignore+=*.o,*.obj,*.pyc,*.class,.git,node_modules,lib-cov
