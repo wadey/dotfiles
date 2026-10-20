@@ -1,6 +1,6 @@
 let mapleader = ","
 
-source ~/.vim/vundle.vim
+source ~/.vim/plug.vim
 
 syntax enable               "syntax highlighting
 
