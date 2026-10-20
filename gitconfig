@@ -1,9 +1,5 @@
-[user]
-  name =
-  email =
-[github]
-  user =
-  token =
+[include]
+  path = ~/.gitsecret
 [color]
   ui = true
 [alias]
@@ -89,3 +85,5 @@
 	diff = diff-highlight | less
 [interactive]
 	diffFilter = diff-highlight
+[fetch]
+	prune = true
