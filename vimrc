@@ -88,28 +88,6 @@ nmap <silent> <leader>s :set list!<CR>
 nmap <silent> <leader>n :silent :nohlsearch<CR>
 nmap . .`[
 
-" GIT
-" set laststatus=2
-" set statusline=%<%f[%{GitBranch()}]\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-" set statusline=%<%f\ %3*%{strlen(&ft)?&ft:'none'}%*\ %4*%{fugitive#statusline()}%*%h%m%r%=%-14.(%l,%c%V%)\ %P
-
-" From https://gist.github.com/840731
-set statusline=\ "
-set statusline+=%-25.80f\ " file name minimum 25, maxiumum 80 (right justified)
-set statusline+=%h "help file flag
-set statusline+=%r "read only flag
-set statusline+=%m "modified flag
-set statusline+=%w "preview flag
-set statusline+=\ "
-set statusline+=[
-set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
-set statusline+=]\ "
-set statusline+=%1*%{fugitive#statusline()}%*\ " Fugitive
-"set statusline+=%5*%{Rvm#statusline()}%*\ " RVM
-set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%* " Syntastic Syntax Checking
-set statusline+=%= " right align
-set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
-
 " Don't count warnings as errors
 " let g:syntastic_quiet_warnings=1
 let g:syntastic_stl_format = '%E{[Err: %fe #%e]}'
