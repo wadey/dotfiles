@@ -43,7 +43,7 @@ set wildignore+=*.o,*.obj,*.pyc,*.class,.git,node_modules,lib-cov
 
 " use unicode in listchars
 " https://github.com/tpope/vim-sensible/pull/58/files
-if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
+if !has('win32') && &encoding ==# 'utf-8'
     let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
 endif
 
