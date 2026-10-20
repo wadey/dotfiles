@@ -70,7 +70,6 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'SQLUtilities'
 Plugin 'tpope/vim-abolish'
-Plugin 'Shougo/neocomplete.vim'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'mhinz/vim-signify' " Enabled Only for `hg`
