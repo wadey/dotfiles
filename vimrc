@@ -107,7 +107,6 @@ augroup vimrc_autocmds
       \   nnoremap <buffer> .. :edit %:h<CR> |
       \ endif
 augroup END
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 
 " Removes trailing spaces
 command! TrimWhiteSpace %s/\v\s+$//
