@@ -9,7 +9,8 @@ kill:
 
 env:
 	python3 -m venv env
-	./env/bin/pip install PyYAML
+	./env/bin/pip install --upgrade pip setuptools
+	./env/bin/pip install PyYAML==5.4.1
 
 dump-gnome:
 	dconf dump /org/gnome/desktop/peripherals/mouse/ >org.gnome.desktop.peripherals.mouse.conf
