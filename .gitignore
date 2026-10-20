@@ -1,6 +1,7 @@
 /autokey/env
 /zsh.d/*_local
-/vim/bundle
+/vim/autoload/plug.vim
+/vim/plugged
 /vim/.netrwhist
 /vim/swap
 /backups
