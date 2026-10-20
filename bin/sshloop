@@ -2,9 +2,6 @@
 
 if [ $# -eq 0 ]; then
     echo "Usage: sshloop server ... [-- ssharg ...]" 2>&1
-    echo "Examples:" 2>&1
-    echo "  sshloop myserver-{0..5}" 2>&1
-    echo "  sshloop myserver-{0..5} -- 'echo hi'" 2>&1
     exit 2
 fi
 
@@ -19,8 +16,14 @@ for i; do
 done
 
 for SERVER in $SERVERS; do
+    if echo "$SERVER" | grep -q '^10'
+    then
+        IP="$SERVER"
+    else
+        IP="$(dig +short "$SERVER" | grep '^10' | head -n 1)"
+    fi
     echo
-    echo $SERVER
+    echo "$SERVER - $IP"
     echo
-    ssh $SERVER $*
+    ssh "$IP" "$@"
 done
