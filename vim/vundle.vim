@@ -15,9 +15,11 @@ if !filereadable(vundle_readme)
 endif
 
 set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+call vundle#begin()
 
 source ~/.vim/bundles.vim
+
+call vundle#end()
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
