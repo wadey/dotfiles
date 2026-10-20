@@ -59,34 +59,34 @@ elseif has("unix")
 endif
 
 "" toggle margins
-map ;L ;on-m
-map ;off-m      :set textwidth=0\|map ;L ;on-m<CR>
-map ;on-m       :set textwidth=78\|map ;L ;off-m<CR>
+nmap ;L ;on-m
+nnoremap ;off-m     :set textwidth=0\|nmap ;L ;on-m<CR>
+nnoremap ;on-m      :set textwidth=78\|nmap ;L ;off-m<CR>
 
 " Change <tab>s to spaces
-map ;T :retab<CR>
+nnoremap ;T :retab<CR>
 
 nnoremap j gj
 nnoremap k gk
 
 " Visually select the text that was last edited/pasted
-nmap gV `[v`]
+nnoremap gV `[v`]
 
 "" F key toggles
-map <F7>    :set relativenumber!<CR>
-map <F9>    :set wrap!<CR>
+nnoremap <F7>   :set relativenumber!<CR>
+nnoremap <F9>   :set wrap!<CR>
 
-map <F11>   :wa!<CR>:!aspell -c --dont-backup "%"<CR>:e! "%"<CR><CR>
-map <F12>   :wa!<CR>:make<CR>
+nnoremap <F11>  :wa!<CR>:!aspell -c --dont-backup "%"<CR>:e! "%"<CR><CR>
+nnoremap <F12>  :wa!<CR>:make<CR>
 
 let g:SuperTabDefaultCompletionType = "context"
 
 set verbose=0
 
 set list
-nmap <silent> <leader>s :set list!<CR>
-nmap <silent> <leader>n :silent :nohlsearch<CR>
-nmap . .`[
+nnoremap <silent> <leader>s :set list!<CR>
+nnoremap <silent> <leader>n :silent :nohlsearch<CR>
+nnoremap . .`[
 
 augroup vimrc_autocmds
     autocmd!
