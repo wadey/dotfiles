@@ -19,6 +19,7 @@ nnoremap Y y$
 nnoremap Q gq
 set ignorecase              "ignore case in searches
 set smartcase
+set shortmess-=S            "show search match count
 set hlsearch                "highlight search items"
 
 set modeline                "read modeline from files"
