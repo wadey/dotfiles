@@ -29,7 +29,6 @@ Plugin 'vim-airline/vim-airline'               " lean & mean status/tabline for 
 Plugin 'PeterRincker/vim-argumentative'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'godlygeek/tabular'
-Plugin 'ConradIrwin/vim-bracketed-paste' " Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)
 Plugin 'Lokaltog/vim-easymotion'         " Makes it easier to do complicated motions
 Plugin 'junegunn/vim-easy-align'
 Plugin 'IndexedSearch'
