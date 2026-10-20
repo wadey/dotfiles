@@ -102,10 +102,7 @@ augroup vimrc_autocmds
 
     " http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/
     autocmd BufReadPost fugitive://* set bufhidden=delete
-    autocmd User fugitive
-      \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-      \   nnoremap <buffer> .. :edit %:h<CR> |
-      \ endif
+    autocmd User FugitiveTree,FugitiveBlob nnoremap <buffer> .. :edit %:h<CR>
 augroup END
 
 " Removes trailing spaces
