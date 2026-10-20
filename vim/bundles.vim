@@ -50,7 +50,6 @@ Plugin 'fatih/vim-go'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'rust-lang/rust.vim'
 " Plugin 'Puppet-Syntax-Highlighting'
-Plugin 'JSON.vim'
 Plugin 'uarun/vim-protobuf'
 Plugin 'JamshedVesuna/vim-markdown-preview' " A light Vim plugin for previewing markdown files in a browser.
 Plugin 'pearofducks/ansible-vim'
