@@ -19,7 +19,6 @@ nnoremap Y y$
 nnoremap Q gq
 set ignorecase              "ignore case in searches
 set smartcase
-set gdefault
 set hlsearch                "highlight search items"
 
 set modeline                "read modeline from files"
