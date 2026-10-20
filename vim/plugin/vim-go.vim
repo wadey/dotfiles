@@ -38,6 +38,9 @@ function! s:build_go_files()
   endif
 endfunction
 
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+augroup vim_go_autocmds
+  autocmd!
+  autocmd FileType go nnoremap <buffer> <leader>b :<C-u>call <SID>build_go_files()<CR>
+augroup END
 
 " au filetype go inoremap <buffer> . .<C-x><C-o>
