@@ -34,7 +34,7 @@ set textwidth=0             "When wrapping is off, break lines at 78 chars
 set formatoptions=qrn1
 set breakindent
 
-color jellybeans
+silent! colorscheme jellybeans
 
 set colorcolumn=80
 hi ColorColumn ctermbg=black guibg=grey10
