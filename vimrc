@@ -115,17 +115,12 @@ command! TrimWhiteSpace %s/\v\s+$//
 " via http://vim.1045645.n5.nabble.com/How-to-make-saveas-default-to-original-file-s-directory-td2827361.html
 command! -nargs=1 SaveasSamePath exe "saveas " . expand("%:p:h") . "/" . expand("<args>")
 
-" ConqueTerm settings
-let g:ConqueTerm_ReadUnfocused = 1
-let g:ConqueTerm_InsertOnEnter = 1
-let g:ConqueTerm_CWInsert = 1
-
 " Makes it easy to run a shells
 " example: can do ":Node %" to run the current file
-command! -nargs=* -complete=file Shell ConqueTermSplit <args>
-command! -nargs=* -complete=file Zsh ConqueTermSplit zsh <args>
-command! -nargs=* -complete=file Node ConqueTermSplit node <args>
-command! -nargs=* -complete=file Python ConqueTermSplit python <args>
+command! -nargs=* -complete=file Shell terminal <args>
+command! -nargs=* -complete=file Zsh terminal zsh <args>
+command! -nargs=* -complete=file Node terminal node <args>
+command! -nargs=* -complete=file Python terminal python3 <args>
 
 " use python json to Tidy a file
 command! -range=% -nargs=* Json <line1>,<line2>!python -mjson.tool <args>
