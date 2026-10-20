@@ -68,7 +68,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/SQLUtilities'
 Plug 'tpope/vim-abolish'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'mhinz/vim-signify' " Enabled Only for `hg`
 Plug 'mattboehm/vim-unstack' " Vim plugin for parsing stack traces and opening the files
 Plug 'michaeljsmith/vim-indent-object' " Vim plugin that defines a new text object representing lines of code at the same indent level. Useful for python/vim scripts, etc.
