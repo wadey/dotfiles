@@ -81,6 +81,9 @@ nnoremap <F11>  :wa!<CR>:!aspell -c --dont-backup "%"<CR>:e! "%"<CR><CR>
 nnoremap <F12>  :wa!<CR>:make<CR>
 
 let g:SuperTabDefaultCompletionType = "context"
+" Enter accepts the selected completion. (g:SuperTabCrMapping is ignored
+" because vim-eunuch already maps <CR>, but eunuch wraps this mapping.)
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 set verbose=0
 
