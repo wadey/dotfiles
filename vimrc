@@ -88,10 +88,6 @@ nmap <silent> <leader>s :set list!<CR>
 nmap <silent> <leader>n :silent :nohlsearch<CR>
 nmap . .`[
 
-" Don't count warnings as errors
-" let g:syntastic_quiet_warnings=1
-let g:syntastic_stl_format = '%E{[Err: %fe #%e]}'
-
 au BufRead,BufNewFile *.thrift set filetype=thrift
 au BufRead,BufNewFile *.json set filetype=json
 
