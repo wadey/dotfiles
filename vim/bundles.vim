@@ -29,7 +29,7 @@ Plugin 'vim-airline/vim-airline'               " lean & mean status/tabline for 
 Plugin 'PeterRincker/vim-argumentative'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'godlygeek/tabular'
-Plugin 'Lokaltog/vim-easymotion'         " Makes it easier to do complicated motions
+Plugin 'easymotion/vim-easymotion'       " Makes it easier to do complicated motions
 Plugin 'junegunn/vim-easy-align'
 Plugin 'IndexedSearch'
 Plugin 'guicolorscheme.vim'
