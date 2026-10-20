@@ -64,7 +64,6 @@ Plugin 'vim-test/vim-test'
 Plugin 'justinmk/vim-gtfo'
 Plugin 'gcmt/wildfire.vim'
 Plugin 'kylef/apiblueprint.vim'
-Plugin 'Shougo/vimproc.vim' " https://github.com/fatih/vim-go/pull/670
 Plugin 'jreybert/vimagit' " From a very single vim buffer, you can perform all basic git operations.
 Plugin 'vito-c/jq.vim' " Syntax highlighting for jq files in vim/neovim
 Plugin 'junegunn/fzf'
