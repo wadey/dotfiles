@@ -59,7 +59,7 @@ Plugin 'hashivim/vim-terraform'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'bkad/CamelCaseMotion'
-Plugin 'janko-m/vim-test'
+Plugin 'vim-test/vim-test'
 "Plugin 'justincampbell/vim-eighties' " Automatically resizes your windows
 Plugin 'justinmk/vim-gtfo'
 Plugin 'gcmt/wildfire.vim'
