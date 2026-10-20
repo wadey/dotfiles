@@ -47,10 +47,6 @@ if !has('win32') && &encoding ==# 'utf-8'
     let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
 endif
 
-"" TOhtml stuff
-let html_use_css=1          "use css in HTML output
-let use_xhtml=1             "use xhtml in HTML output
-
 "" Folding
 set foldmethod=indent       "fold based on identation 
 set nofen                   "open all folds initially
