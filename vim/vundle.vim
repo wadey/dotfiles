@@ -1,29 +1,14 @@
 set nocompatible               " be iMproved
-filetype off                   " required!
 
-" via http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    echo ""
-    silent !rm -rf ~/.vim/bundle
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
-    let iCanHazVundle=0
+" Auto-install vim-plug if not present
+let data_dir = expand('~/.vim')
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    silent execute '!curl -fLo ' . data_dir . '/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 source ~/.vim/bundles.vim
 
-call vundle#end()
-
-if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :PluginInstall
-endif
-
-filetype plugin indent on     " required!
+call plug#end()
