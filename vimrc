@@ -76,7 +76,6 @@ nmap gV `[v`]
 map <F7>    :set relativenumber!<CR>
 map <F9>    :set wrap!<CR>
 
-map <F10>   :Tlist<CR>
 map <F11>   :wa!<CR>:!aspell -c --dont-backup "%"<CR>:e! "%"<CR><CR>
 map <F12>   :wa!<CR>:make<CR>
 
