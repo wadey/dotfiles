@@ -51,8 +51,6 @@ endif
 set foldmethod=indent       "fold based on identation 
 set nofen                   "open all folds initially
 
-set printoptions=paper:letter,number:y
-
 "" some system specific commmands
 if has("mac")
     iab  rtime   <ESC>:r!gdate -R<CR>i<BS><ESC>A
