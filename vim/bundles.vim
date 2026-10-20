@@ -69,7 +69,6 @@ Plugin 'vito-c/jq.vim' " Syntax highlighting for jq files in vim/neovim
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'SQLUtilities'
-Plugin 'Align'
 Plugin 'tpope/vim-abolish'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'AndrewRadev/splitjoin.vim'
